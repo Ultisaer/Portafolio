@@ -1,6 +1,298 @@
+$focus-color: #13161C
+$contrast-color: #e65111
+$primary-color: #FFFFFF
+$title-color : #fdd7c6
+$secundary-color: #2C323C
+$accions-color: #f07e4d
+
 *
     margin: 0
     padding: 0
     box-sizing: border-box
-    color: red
+
+html
+    font-size: 62.5%
+    font-family: 'Montserrat', sans-serif
+    overflow-x: hidden
+
+main .projects .containers-projects .hidden 
+    display: none
+
+nav
+    background-color: $secundary-color
+    width: 100%
+    height: 70px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 0 10px 50px
+    .logo
+        width: 60px
+        height: 60px
+        img
+            width: 100%
+            height: 100%
+    .container-bar
+        position: fixed
+        right: 0
+        top: 15px
+        background-color: $secundary-color
+        display: flex
+        justify-content: end
+        align-items: center
+        border-top-left-radius: 10px
+        border-bottom-left-radius: 10px
+        .bar
+            width: 520px
+            height: 40px
+            background-color: $focus-color
+            border: solid 2px $contrast-color
+            border-top-left-radius: 10px
+            border-bottom-left-radius: 10px
+            display: flex
+            gap: 20px
+            justify-content: space-between
+            align-items: center
+            padding: 10px 25px 10px 25px
+            a
+                color: $title-color
+                text-decoration: none
+                font-size: 1.6rem
+    .container-perfil
+        position: fixed
+        right: 10px
+        bottom: 10px
+        width: 130px
+        height: 130px
+        img
+            width: 100%
+            height: 100%
+
+main 
+    .aboutMe
+        width: 900px
+        height: 400px
+        margin: 220px auto
+        display: grid
+        grid-template-columns: repeat(2 , 1fr)
+        grid-template-rows: 1fr 2fr
+        gap: 20px
+        div:nth-child(n)
+            border-radius: 10px
+        .profile
+            background-color: $focus-color
+            display: grid
+            place-content: center
+            border: 4px solid $contrast-color
+            h3
+                font-family: 'Candal', sans-serif
+                color: $title-color
+                font-size: 5rem
+                line-height: 44px
+            h1
+                font-family: 'Candal', sans-serif
+                color: $title-color
+                font-size: 2rem
+        .future
+            grid-area: 1 / 2 / 3 / 3
+            background-color: $secundary-color
+            border: 2px solid $contrast-color
+            padding: 30px 
+            h2
+                font-size: 3rem
+                font-family: 'Candal', sans-serif
+                line-height: 30px
+                color: $title-color
+                margin-bottom: 50px
+            p
+                font-size: 1.6rem
+                color: $primary-color
+                margin-bottom: 20px
+        .description
+            background-color: $secundary-color
+            border: 2px solid $contrast-color
+            padding: 20px 30px
+            display: grid
+            place-content: center
+            text-align: center
+            p
+                font-size: 1.6rem
+                color: $primary-color
+
+.projects
+    width: 100vw
+    height: 120vh
+    background-color: $secundary-color
+    display: grid
+    place-content: center
+    .containers-projects
+        width: 1450px
+        height: 780px
+        display: grid
+        align-content: space-around
+        justify-content: center
+        .title
+            font-size: 5rem
+            font-family: 'Candal', sans-serif
+            color: $title-color
+        .gallery-proyects
+            width: 1200px
+            height: 500px
+            border: 2px solid $contrast-color
+            border-radius: 10px
+            padding: 30px 30px 30px 30px
+            background-color: $focus-color
+            display: grid
+            grid-template-columns: 1fr auto 1fr
+            gap: 20px
+            .container-move
+                width: 40px
+                background-color: transparent
+                border: none
+                box-shadow: none
+                cursor: pointer
+            :hover path
+                fill: #FF4D00
+            #gallery-scroll
+                display: grid
+                grid-auto-flow: column
+                grid-auto-columns: 1fr
+                overflow-x: auto
+                overflow-y: hidden
+                gap: 20px
+                overscroll-behavior-x: contain
+                scroll-snap-type: x mandatory
+                .container-gallery
+                    width: 400px
+                    height: 400px
+                    border: 4px solid $contrast-color
+                    border-radius: 10px
+                    background-color: #717a8d
+                    margin: 15px
+                    scroll-snap-align: start
+                    display: flex
+                    align-items: end
+                    justify-content: end
+                    .expand
+                        background-color: $focus-color
+                        width: 180px
+                        height: 50px
+                        margin: 20px
+                        display: grid
+                        place-content: center
+                        border-radius: 10px
+                        font-family: 'Montserrat', sans-serif
+                        box-shadow: none
+                        cursor: pointer
+                        border: 2px solid $contrast-color
+                        color: $title-color
+                        font-size: 1.6rem
+                    .expand:hover
+                        background-color: $accions-color
+                        color: $focus-color
+                        border: 4px solid $contrast-color
+                        font-weight: 700            
+        .container-projects
+            width: 1200px
+            height: 600px
+            display: grid
+            grid-template-columns: auto 300px
+            gap: 20px
+            .portafolio
+                border: 2px solid $contrast-color
+                border-radius: 10px
+                background-color: $focus-color
+                width: 100%
+                display: grid
+                grid-template-columns: 1fr
+                position: relative
+                .left
+                    .container-move
+                        width: 26px
+                        background-color: transparent
+                        border: none
+                        box-shadow: none
+                        cursor: pointer
+                        height: 200px
+                        position: absolute
+                        z-index: 10
+                        left: 30px
+                        top: 200px
+                    :hover path
+                        fill: #FF4D00
+                    .return                 
+                        background-color: transparent
+                        border: none
+                        box-shadow: none
+                        cursor: pointer
+                        position: absolute
+                        z-index: 10
+                        top: 30px
+                        left: 30px
+                #proyect-expand
+                    overflow-x: auto
+                    overflow-y: auto
+                    .container-project
+                        height: 600px
+                        scroll-snap-align: start
+                        display: flex
+                        align-items: end
+                        justify-content: end
+                        img
+                            width: 100%
+                            height: 100%
+                            position: relative
+                            border-radius: 10px
+                        .links-container
+                            display: grid
+                            place-content: center
+                            gap: 10px
+                            position: absolute
+                            bottom: 30px
+                            a
+                                display: grid
+                                place-content: center
+                                background-color: $focus-color
+                                border-radius: 10px
+                                box-shadow: none
+                                cursor: pointer
+                                border: 2px solid $contrast-color
+                                color: $title-color
+                                font-size: 1.6rem
+                                height: 43px
+                                width: 84px
+                                margin-right: 30px
+                            a:hover
+                                background-color: $accions-color
+                                border: 4px solid $contrast-color
+                                font-weight: 700
+                                color: $focus-color
+                .right
+                    .full-screen
+                        background-color: transparent
+                        border: none
+                        box-shadow: none
+                        cursor: pointer
+                        position: absolute
+                        z-index: 10
+                        top: 30px
+                        right: 30px
+                    .container-move
+                        width: 26px
+                        background-color: transparent
+                        border: none
+                        box-shadow: none
+                        cursor: pointer
+                        height: 200px
+                        position: absolute
+                        z-index: 10
+                        right: 30px
+                        top: 200px
+                    :hover path
+                        fill: #FF4D00
+            .statistics
+                border: 2px solid $contrast-color
+                border-radius: 10px
+                padding: 30px
+                background-color: $focus-color
 

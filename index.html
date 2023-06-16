@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./scss/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
     <title>Portafolio</title>
 </head>
 <body>
@@ -11,36 +16,131 @@
         <div class="logo">
             <img src="./Assets/Logo.svg" alt="Logo del portafolio de Jhonatan Castillo">
         </div>
-        <div class="bar"></div>
+        <div class="container-bar">
+            <div class="bar">
+                <a href="aboutMe">SOBRE MI</a>
+                <a href="projects">PROYECTOS</a>
+                <a href="skills">HABILIDADES</a>
+                <a href="contact">CONTACTO</a>
+            </div>
+        </div>
+        <div class="container-perfil">
+            <img src="./Assets/Perfil.svg" alt="Imagen de referencia">
+        </div>
     </nav>
     <main>
         <div class="aboutMe">
-            <div class="container-aboutMe">
-                <div class="title profile"></div>
-                <div class="future"></div>
-                <div class="description"></div>
+            <div class="title profile">
+                <h3>JHONATAN</h3>
+                <H1>DAVID CASTILLO CASTILLO</H1>
+            </div>
+            <div class="future">
+                <h2>DESARROLLADOR WEB FRONTEND</h2>
+                <p>Mi formación en Frontend se ve reforzada (UX) gracias a una beca de Google. Además, he estado a la vanguardia de las innovaciones tecnológicas, enfocándome en la creación de imágenes utilizando DALLE-2, Stability Diffusion y Midjourney.
+                </p>
+                <p>He participado en eventos de importancia global como la PlatziCONF México y PlatziCONF Bogotá</p>
+                
+            </div>
+            <div class="description">
+                <p>Soy un apasionado por el desarrollo frontend y la tecnología, siempre a la vanguardia para mantenerme relevante en un mundo tan disruptivo, donde los que se adapten al cambio son los que sobreviven.</p>
             </div>
         </div>
         <div class="projects">
-            <div class="title"></div>
-            <div class="gallery-proyects">
-                <div class="project1">
-                    <button class = "gallery"></button>
-                    <button class="button expand"></button>
-                    <button class="nextProject"></button>
-                    <div class="proyectExpand">
-                        <img src="" alt="">
-                        <button class="fullScreen"></button>
-                        <a class="links"></a>
-                        <a class="links"></a>
+            <div class="containers-projects">
+                <div class="title">PROYECTOS</div>
+                <div class="gallery-proyects">
+                    <button class="container-move" id="button-back">
+                        <svg class="svg-icon" width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1316 43.684L1.08838 23.2322C1.03131 23.1637 1.00005 23.0774 1.00004 22.9882C1.00004 22.899 1.03129 22.8127 1.08838 22.7442L18.1315 2.29244C20.2275 -0.222723 24.321 1.1742 24.4422 4.44597C24.4718 5.24522 24.2322 6.03126 23.7618 6.67808L12.9854 21.4956C12.6699 21.9294 12.5 22.452 12.5 22.9884C12.5001 23.5246 12.67 24.0471 12.9854 24.4808L23.7619 39.2984C24.2323 39.9452 24.4719 40.7312 24.4423 41.5305C24.3211 44.8023 20.2276 46.1992 18.1316 43.684Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                        </svg>                        
+                    </button>
+                    <div id="gallery-scroll">
+                        <div class="container-gallery">
+                            <button class="expand">Vista Detallada 1</button>
+                        </div>
+                        <div class="container-gallery ">
+                            <button class="expand">Vista Detallada 2</button>
+                        </div>
+                        <div class="container-gallery ">
+                            <button class="expand">Vista Detallada 3</button>
+                        </div>
+                        <div class="container-gallery ">
+                            <button class="expand">Vista Detallada 4</button>
+                        </div>
                     </div>
-                    <div class="statistics">
+                    <button class="container-move" id="button-after">
+                        <svg class="svg-icon" width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.31323 2.29254L24.3564 22.7444C24.4135 22.8129 24.4448 22.8992 24.4448 22.9884C24.4448 23.0775 24.4135 23.1639 24.3564 23.2324L7.31332 43.6841C5.21735 46.1993 1.12381 44.8024 1.00263 41.5306C0.973028 40.7313 1.21264 39.9453 1.68306 39.2985L12.4594 24.481C12.7749 24.0472 12.9448 23.5246 12.9448 22.9882C12.9447 22.4519 12.7748 21.9295 12.4594 21.4958L1.68297 6.67818C1.21255 6.03136 0.972939 5.24532 1.00254 4.44608C1.12372 1.1743 5.21727 -0.222618 7.31323 2.29254Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="container-projects hidden">
+                    <div class="portafolio">
+                        <div class="left">
+                            <button id="back-project" class="container-move">
+                                <svg class="svg-icon" width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.1316 43.684L1.08838 23.2322C1.03131 23.1637 1.00005 23.0774 1.00004 22.9882C1.00004 22.899 1.03129 22.8127 1.08838 22.7442L18.1315 2.29244C20.2275 -0.222723 24.321 1.1742 24.4422 4.44597C24.4718 5.24522 24.2322 6.03126 23.7618 6.67808L12.9854 21.4956C12.6699 21.9294 12.5 22.452 12.5 22.9884C12.5001 23.5246 12.67 24.0471 12.9854 24.4808L23.7619 39.2984C24.2323 39.9452 24.4719 40.7312 24.4423 41.5305C24.3211 44.8023 20.2276 46.1992 18.1316 43.684Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="return">
+                                <svg width="40" height="40" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.4884 1.30053L1.50073 10.6273C0.833415 11.1465 0.833415 12.1085 1.50073 12.6277L13.4884 21.9545C14.3886 22.6549 15.7495 22.0529 15.7495 20.9543L15.7494 17.145C22.8262 15.6845 45.7824 27.3686 23.5166 41C38.3605 41 57.3468 9.19329 15.7494 4.4872L15.7495 2.30071C15.7495 1.2021 14.3886 0.600121 13.4884 1.30053Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                                </svg>                                
+                            </button>
+                        </div>
+                        <div class="right">
+                            <button id="next-project" class="container-move">
+                                <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.31323 2.29254L24.3564 22.7444C24.4135 22.8129 24.4448 22.8992 24.4448 22.9884C24.4448 23.0775 24.4135 23.1639 24.3564 23.2324L7.31332 43.6841C5.21735 46.1993 1.12381 44.8024 1.00263 41.5306C0.973028 40.7313 1.21264 39.9453 1.68306 39.2985L12.4594 24.481C12.7749 24.0472 12.9448 23.5246 12.9448 22.9882C12.9447 22.4519 12.7748 21.9295 12.4594 21.4958L1.68297 6.67818C1.21255 6.03136 0.972939 5.24532 1.00254 4.44608C1.12372 1.1743 5.21727 -0.222618 7.31323 2.29254Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="full-screen">
+                                <svg width="40" height="40" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M40.9192 27.1385C40.9192 23.8117 33.8748 23.6533 33.8748 26.9801L33.8748 33.99L26.9893 33.99C23.6462 33.99 23.6462 41 26.9893 41L37.5761 41C40.0278 41 40.9192 38.5049 40.9192 37.6732L40.9192 27.1385Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                                    <path d="M27.1387 1.00005C23.8119 1.00005 23.6535 8.04445 26.9803 8.04445L33.9903 8.04445L33.9903 14.9299C33.9903 18.273 41.0002 18.273 41.0002 14.9299L41.0002 4.34315C41.0002 1.89149 38.5052 1.00005 37.6735 1.00005L27.1387 1.00005Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                                    <path d="M1.00025 14.8615C1.00025 18.1883 8.04466 18.3467 8.04466 15.0199L8.04466 8.00996L14.9301 8.00996C18.2733 8.00996 18.2733 1 14.9301 1L4.34335 1C1.89169 1 1.00025 3.49507 1.00025 4.32676L1.00025 14.8615Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                                    <path d="M14.8618 40.9189C18.1885 40.9189 18.347 33.8745 15.0202 33.8745L8.01022 33.8745L8.01022 26.9891C8.01022 23.6459 1.00024 23.6459 1.00024 26.9891L1.00024 37.5758C1.00024 40.0275 3.49532 40.9189 4.32701 40.9189L14.8618 40.9189Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                                    </svg>                           
+                            </button>
+                    </div>
+                        <div id="proyect-expand" >
+                            <div class="project1 container-project">
+                                <img src="/Assets/descarga (4).png" alt="">
+                                <div class="links-container">
+                                    <a class="links">App</a>
+                                    <a class="links">GitHub</a>
+                                </div>
+                            </div>
+                            <div class="project2 container-project">
+                                <img src="/Assets/descarga (3).png" alt="">
+                                <div class="links-container">
+                                    <a class="links">App 2</a>
+                                    <a class="links">GitHub</a>
+                                </div>
+                            </div>
+                            <div class="project3 container-project">
+                                <img src="/Assets/descarga (5).png" alt="">
+                                <div class="links-container">
+                                    <a class="links">App 3</a>
+                                    <a class="links">GitHub</a>
+                                </div>
+                            </div>
+                            <div class="project4 container-project">
+                                <img src="/Assets/descarga (1).png" alt="">
+                                <div class="links-container">
+                                    <a class="links">App 4</a>
+                                    <a class="links">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="statistics" >
                         <div class="technologies"></div>
                         <div class="barStadistic"></div>
                     </div>
                 </div>
-            </div>
         </div>
+        
         <div class="skills">
             <div class="title"></div>
             <div class="container-skills">
@@ -79,5 +179,8 @@
             <p></p>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

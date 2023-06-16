@@ -2,5 +2,332 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: red;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+main .projects .containers-projects .hidden {
+  display: none;
+}
+
+nav {
+  background-color: #2C323C;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 10px 50px;
+}
+nav .logo {
+  width: 60px;
+  height: 60px;
+}
+nav .logo img {
+  width: 100%;
+  height: 100%;
+}
+nav .container-bar {
+  position: fixed;
+  right: 0;
+  top: 15px;
+  background-color: #2C323C;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+nav .container-bar .bar {
+  width: 520px;
+  height: 40px;
+  background-color: #13161C;
+  border: solid 2px #e65111;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px 10px 25px;
+}
+nav .container-bar .bar a {
+  color: #fdd7c6;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+nav .container-perfil {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 130px;
+  height: 130px;
+}
+nav .container-perfil img {
+  width: 100%;
+  height: 100%;
+}
+
+main .aboutMe {
+  width: 900px;
+  height: 400px;
+  margin: 220px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 2fr;
+  gap: 20px;
+}
+main .aboutMe div:nth-child(n) {
+  border-radius: 10px;
+}
+main .aboutMe .profile {
+  background-color: #13161C;
+  display: grid;
+  place-content: center;
+  border: 4px solid #e65111;
+}
+main .aboutMe .profile h3 {
+  font-family: "Candal", sans-serif;
+  color: #fdd7c6;
+  font-size: 5rem;
+  line-height: 44px;
+}
+main .aboutMe .profile h1 {
+  font-family: "Candal", sans-serif;
+  color: #fdd7c6;
+  font-size: 2rem;
+}
+main .aboutMe .future {
+  grid-area: 1/2/3/3;
+  background-color: #2C323C;
+  border: 2px solid #e65111;
+  padding: 30px;
+}
+main .aboutMe .future h2 {
+  font-size: 3rem;
+  font-family: "Candal", sans-serif;
+  line-height: 30px;
+  color: #fdd7c6;
+  margin-bottom: 50px;
+}
+main .aboutMe .future p {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+main .aboutMe .description {
+  background-color: #2C323C;
+  border: 2px solid #e65111;
+  padding: 20px 30px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+main .aboutMe .description p {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+}
+
+.projects {
+  width: 100vw;
+  height: 120vh;
+  background-color: #2C323C;
+  display: grid;
+  place-content: center;
+}
+.projects .containers-projects {
+  width: 1450px;
+  height: 780px;
+  display: grid;
+  align-content: space-around;
+  justify-content: center;
+}
+.projects .containers-projects .title {
+  font-size: 5rem;
+  font-family: "Candal", sans-serif;
+  color: #fdd7c6;
+}
+.projects .containers-projects .gallery-proyects {
+  width: 1200px;
+  height: 500px;
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  padding: 30px 30px 30px 30px;
+  background-color: #13161C;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+}
+.projects .containers-projects .gallery-proyects .container-move {
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+.projects .containers-projects .gallery-proyects :hover path {
+  fill: #FF4D00;
+}
+.projects .containers-projects .gallery-proyects #gallery-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+}
+.projects .containers-projects .gallery-proyects #gallery-scroll .container-gallery {
+  width: 400px;
+  height: 400px;
+  border: 4px solid #e65111;
+  border-radius: 10px;
+  background-color: #717a8d;
+  margin: 15px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.projects .containers-projects .gallery-proyects #gallery-scroll .container-gallery .expand {
+  background-color: #13161C;
+  width: 180px;
+  height: 50px;
+  margin: 20px;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: none;
+  cursor: pointer;
+  border: 2px solid #e65111;
+  color: #fdd7c6;
+  font-size: 1.6rem;
+}
+.projects .containers-projects .gallery-proyects #gallery-scroll .container-gallery .expand:hover {
+  background-color: #f07e4d;
+  color: #13161C;
+  border: 4px solid #e65111;
+  font-weight: 700;
+}
+.projects .containers-projects .container-projects {
+  width: 1200px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: auto 300px;
+  gap: 20px;
+}
+.projects .containers-projects .container-projects .portafolio {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  background-color: #13161C;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+.projects .containers-projects .container-projects .portafolio .left .container-move {
+  width: 26px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  height: 200px;
+  position: absolute;
+  z-index: 10;
+  left: 30px;
+  top: 200px;
+}
+.projects .containers-projects .container-projects .portafolio .left :hover path {
+  fill: #FF4D00;
+}
+.projects .containers-projects .container-projects .portafolio .left .return {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  left: 30px;
+}
+.projects .containers-projects .container-projects .portafolio #proyect-expand {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.projects .containers-projects .container-projects .portafolio #proyect-expand .container-project {
+  height: 600px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.projects .containers-projects .container-projects .portafolio #proyect-expand .container-project img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+}
+.projects .containers-projects .container-projects .portafolio #proyect-expand .container-project .links-container {
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 30px;
+}
+.projects .containers-projects .container-projects .portafolio #proyect-expand .container-project .links-container a {
+  display: grid;
+  place-content: center;
+  background-color: #13161C;
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+  border: 2px solid #e65111;
+  color: #fdd7c6;
+  font-size: 1.6rem;
+  height: 43px;
+  width: 84px;
+  margin-right: 30px;
+}
+.projects .containers-projects .container-projects .portafolio #proyect-expand .container-project .links-container a:hover {
+  background-color: #f07e4d;
+  border: 4px solid #e65111;
+  font-weight: 700;
+  color: #13161C;
+}
+.projects .containers-projects .container-projects .portafolio .right .full-screen {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  right: 30px;
+}
+.projects .containers-projects .container-projects .portafolio .right .container-move {
+  width: 26px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  height: 200px;
+  position: absolute;
+  z-index: 10;
+  right: 30px;
+  top: 200px;
+}
+.projects .containers-projects .container-projects .portafolio .right :hover path {
+  fill: #FF4D00;
+}
+.projects .containers-projects .container-projects .statistics {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #13161C;
 }/*# sourceMappingURL=main.css.map */
