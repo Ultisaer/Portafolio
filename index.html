@@ -30,7 +30,7 @@
     </nav>
     <main>
         <div class="aboutMe">
-            <div class="title profile">
+            <div class="profile">
                 <h3>JHONATAN</h3>
                 <H1>DAVID CASTILLO CASTILLO</H1>
             </div>
@@ -82,7 +82,7 @@
                                     <path d="M18.1316 43.684L1.08838 23.2322C1.03131 23.1637 1.00005 23.0774 1.00004 22.9882C1.00004 22.899 1.03129 22.8127 1.08838 22.7442L18.1315 2.29244C20.2275 -0.222723 24.321 1.1742 24.4422 4.44597C24.4718 5.24522 24.2322 6.03126 23.7618 6.67808L12.9854 21.4956C12.6699 21.9294 12.5 22.452 12.5 22.9884C12.5001 23.5246 12.67 24.0471 12.9854 24.4808L23.7619 39.2984C24.2323 39.9452 24.4719 40.7312 24.4423 41.5305C24.3211 44.8023 20.2276 46.1992 18.1316 43.684Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
                                 </svg>
                             </button>
-                            <button class="return">
+                            <button id="return">
                                 <svg width="40" height="40" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13.4884 1.30053L1.50073 10.6273C0.833415 11.1465 0.833415 12.1085 1.50073 12.6277L13.4884 21.9545C14.3886 22.6549 15.7495 22.0529 15.7495 20.9543L15.7494 17.145C22.8262 15.6845 45.7824 27.3686 23.5166 41C38.3605 41 57.3468 9.19329 15.7494 4.4872L15.7495 2.30071C15.7495 1.2021 14.3886 0.600121 13.4884 1.30053Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
                                 </svg>                                
@@ -134,34 +134,141 @@
                             </div>
                         </div>
                     </div>
-                    <div class="statistics" >
-                        <div class="technologies"></div>
-                        <div class="barStadistic"></div>
+                    <div id="statistics" >
+                        <div id="project1" class="container-statistic">
+                            <h1>Tecnologías Utilizadas</h1>
+                            <div id="technologiesContainer1" class="statistic"></div>
+                            <div id="chartContainer">
+                                <canvas id="myChart1"></canvas>
+                            </div>
+                        </div>
+                        <div id="project2" class="container-statistic" >
+                            <h1>Tecnologías Utilizadas</h1>
+                            <div id="technologiesContainer2" class="statistic"></div>
+                            <div id="chartContainer">
+                                <canvas id="myChart2"></canvas>
+                            </div>
+                        </div>
+                        <div id="project3" class="container-statistic">
+                            <h1>Tecnologías Utilizadas</h1>
+                            <div id="technologiesContainer3" class="statistic"></div>
+                            <div id="chartContainer">
+                                <canvas id="myChart3"></canvas>
+                            </div>
+                        </div>
+                        <div id="project4" class="container-statistic">
+                            <h1>Tecnologías Utilizadas</h1>
+                            <div id="technologiesContainer4" class="statistic"></div>
+                            <div id="chartContainer">
+                                <canvas id="myChart4"></canvas>
+                            </div>
+                        </div>
+                        <button id="next-project" class="container-move">
+                            <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.31323 2.29254L24.3564 22.7444C24.4135 22.8129 24.4448 22.8992 24.4448 22.9884C24.4448 23.0775 24.4135 23.1639 24.3564 23.2324L7.31332 43.6841C5.21735 46.1993 1.12381 44.8024 1.00263 41.5306C0.973028 40.7313 1.21264 39.9453 1.68306 39.2985L12.4594 24.481C12.7749 24.0472 12.9448 23.5246 12.9448 22.9882C12.9447 22.4519 12.7748 21.9295 12.4594 21.4958L1.68297 6.67818C1.21255 6.03136 0.972939 5.24532 1.00254 4.44608C1.12372 1.1743 5.21727 -0.222618 7.31323 2.29254Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
-        </div>
-        
-        <div class="skills">
-            <div class="title"></div>
-            <div class="container-skills">
-                <a class="technologySkills">
-                    <div class="technologyDescription1">
-                        <img src="" alt="">
-                        <p></p>
-                    </div>
-                </a>
-                <a class="dataBaseSkills"></a>
-                    <div class="dataBaseDescription1">
-                        <img src="" alt="">
-                        <p></p>
-                    </div>
-                <a class="toolsSkills">
-                    <div class="toolsDescription1">
-                        <img src="" alt="">
-                        <p></p>
-                    </div>
-                </a>
             </div>
+        </div>
+        <div class="skills">
+            <div class="container-skills">
+                <div class="title">HABILIDADES</div>
+                <div class="container-move-skills">
+                    <button id="back-skill" class="move-skill">
+                        <svg class="svg-icon" width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1316 43.684L1.08838 23.2322C1.03131 23.1637 1.00005 23.0774 1.00004 22.9882C1.00004 22.899 1.03129 22.8127 1.08838 22.7442L18.1315 2.29244C20.2275 -0.222723 24.321 1.1742 24.4422 4.44597C24.4718 5.24522 24.2322 6.03126 23.7618 6.67808L12.9854 21.4956C12.6699 21.9294 12.5 22.452 12.5 22.9884C12.5001 23.5246 12.67 24.0471 12.9854 24.4808L23.7619 39.2984C24.2323 39.9452 24.4719 40.7312 24.4423 41.5305C24.3211 44.8023 20.2276 46.1992 18.1316 43.684Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div id="type" class="skills-section active slick-skills">
+                        <div class="skill">
+                            <div></div>
+                            <p>REACT</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>JS</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>SASS</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>JAVASCRIPT</p>
+                        </div>
+                    </div>
+                    <div id="database" class="skills-section slick-skills">
+                        <div class="skill">
+                            <div></div>
+                            <p>SQL</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>MariaDB</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>MySQL</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>MongoDB</p>
+                        </div>
+                    </div>
+                    <div id="tools" class="skills-section slick-skills">
+                        <div class="skill">
+                            <div></div>
+                            <p>VisualCode</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>GPT-4</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>Notion</p>
+                        </div>
+                        <div class="skill">
+                            <div></div>
+                            <p>StabilityIA</p>
+                        </div>
+                    </div>
+                    <button id="next-skill" class="move-skill">
+                        <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.31323 2.29254L24.3564 22.7444C24.4135 22.8129 24.4448 22.8992 24.4448 22.9884C24.4448 23.0775 24.4135 23.1639 24.3564 23.2324L7.31332 43.6841C5.21735 46.1993 1.12381 44.8024 1.00263 41.5306C0.973028 40.7313 1.21264 39.9453 1.68306 39.2985L12.4594 24.481C12.7749 24.0472 12.9448 23.5246 12.9448 22.9882C12.9447 22.4519 12.7748 21.9295 12.4594 21.4958L1.68297 6.67818C1.21255 6.03136 0.972939 5.24532 1.00254 4.44608C1.12372 1.1743 5.21727 -0.222618 7.31323 2.29254Z" stroke="#FF4D00" fill="#f07e4d" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="buttons-skills">
+                        <button class="skills-btn active" data-target="type">TECNOLOGIAS</button>
+                        <button class="skills-btn" data-target="database">BASE DE DATOS</button>
+                        <button class="skills-btn" data-target="tools">HERRAMIENTAS</button>
+                    </div>                                   
+                </div>
+                <div id="statistics-type" class="statistics-section active">
+                    <h2>Dominio técnico</h2>
+                    <div id="technologiesContainerSkills1" class="statistic"></div>
+                    <div id="chartContainer1">
+                        <canvas id="myChartSkills1"></canvas>
+                    </div>
+                </div>
+                
+                <div id="statistics-database" class="statistics-section">
+                    <h2>Base de Datos</h2>
+                    <div id="technologiesContainerSkills2" class="statistic"></div>
+                    <div id="chartContainer2">
+                        <canvas id="myChartSkills2"></canvas>
+                    </div>
+                </div>
+                
+                <div id="statistics-tools" class="statistics-section">
+                    <h2>Herramientas</h2>
+                    <div id="technologiesContainerSkills3" class="statistic"></div>
+                    <div id="chartContainer3">
+                        <canvas id="myChartSkills3"></canvas>
+                    </div>
+                </div>
         </div>
         <div class="contact">
             <h1></h1>
@@ -179,8 +286,9 @@
             <p></p>
         </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
