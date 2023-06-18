@@ -209,16 +209,16 @@ var skillsData = {
 // Datos de base de datos
 var databaseData = {
     '2': {
-        labels: ['SQL', 'MariaDB', 'MySQL', 'MongoDB'],
-        data: [25, 30, 35, 10],
+        labels: ['SQL', 'MariaDB', 'MySQL', 'MongoDB' , 'JavaScript'],
+        data: [25, 30, 35, 10, 70],
     },
 };
 
 // Datos de herramientas
 var toolsData = {
     '3': {
-        labels: ['VisualCode', 'GPT-4', 'Notion', 'StabilityIA'],
-        data: [20, 30, 40, 10],
+        labels: ['VisualCode', 'GPT-4', 'Notion', 'StabilityIA', 'Terminal'],
+        data: [20, 30, 40, 10, 80],
     },
 };
 
@@ -334,6 +334,5 @@ $('.buttons-skills button').on('click', function() {
     const target = $(this).data('target'); // obtén el ID del target desde el atributo data-target
     $('.skills-section.active').removeClass('active'); // quita la clase 'active' de la sección actual
     $('#' + target).addClass('active'); // añade la clase 'active' a la sección target
-
-
 });
+
