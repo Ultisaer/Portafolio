@@ -21,12 +21,8 @@ $(document).ready(function(){
             labels: ['HTML', 'CSS', 'JavaScript', 'Python4'],
             data: [10, 50, 20, 20],
             detail: "Proyecto 4"
-        }
-    };
-// Datos de las habilidades
-    // Crear el dashboard para las habilidades
-
-
+    }};
+    // Datos de las habilidades
     const skillGroup = {
         '1': {
             labels: ['React', 'JS', 'Sass', 'JavaScript', 'CSS'],
@@ -45,122 +41,106 @@ $(document).ready(function(){
             img: [],
             data: [20, 30, 40, 10, 80],
             id: "tools",
-        }
-    };
+    }};
+    // Creacion de los elementos del proyecto principal en su vista mas grande
+    function generateProjects(){
+        const galleryScrollProjects = document.querySelector("#gallery-scroll");
+        Object.keys(projectsData).forEach(i => {
 
-    // Creacion de los elementos
-    function generateSkills(){
-        for(let group in skillGroup) {
-            let container = document.querySelector(`#${skillGroup[group].id}`)
+            let containerGallery = document.createElement("div");
+            containerGallery.className = "container-gallery";
 
-            for (let label of skillGroup[group].labels)
-            {
-                let skillDiv = document.createElement("div")
-                skillDiv.className = "skill"
+            let expand = document.createElement("button");
+            expand.className = "expand";
+            expand.setAttribute('data-id', (i - 1)); // Los slick comienzan en 0 y el ciclo inicia en 1
+            expand.innerText = projectsData[i].detail;
 
-                let divs = document.createElement("div")
-                let p = document.createElement("p")
-                p.innerText = label
-                skillDiv.appendChild(divs)
-                skillDiv.appendChild(p)
-                container.appendChild(skillDiv)
-            }
-        }
+            containerGallery.appendChild(expand);
+            galleryScrollProjects.appendChild(containerGallery);
+        })
     }
+      
+    // Creacion de las habilidades del proyecto
+    function generateSkills() {
+        Object.keys(skillGroup).forEach(group => {
+            const container = document.querySelector(`#${skillGroup[group].id}`);
+            skillGroup[group].labels.forEach(label => {
+
+                let skillDiv = document.createElement("div");
+                skillDiv.className = "skill";
+                
+                let p = document.createElement("p");
+                p.innerText = label;
+                
+                skillDiv.append(document.createElement("div"), p);
+                container.appendChild(skillDiv);
+            });
+        });
+    }
+        
     generateSkills()
+    generateProjects()
 
+    // Carruceles //////////////////////////////////////////////////////////////////////////////////////
+    // Carrucel 1 Principal / 2 Carruceles anidados que al seleccionar un elemento se refleja en el otro
 
-    for (let i = 1; i <= Object.keys(projectsData).length; i++ )
-    {
-        let galleryScrollProyects = document.querySelector("#gallery-scroll")
-
-        let containerGallery = document.createElement("div")
-        containerGallery.className = "container-gallery"
-
-        let expand = document.createElement("button")
-        expand.className = "expand"
-        expand.innerText = projectsData[i].detail
-
-        containerGallery.appendChild(expand)
-        galleryScrollProyects.appendChild(containerGallery)
+    function buttonSlick(idNext, idBack, slickSettings) {     // Funcion de creacion de los botones cuando se da click retroceden o avanzan
+        $(idNext).click(() => slickSettings.slick("slickNext") )
+        $(idBack).click(() => slickSettings.slick("slickPrev"))
     }
+    
+    // Funcion de los slicks de todos los proyectos
+    function startSlick(selector, slides = 1 , autoplay = true, speed = 700, fade = false, draggable = true, cssEase = "ease" ){
+        return $(selector).slick({
+            slidesToShow: slides,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
+            autoplaySpeed: 1500,
+            autoplay: autoplay,
+            speed: speed,
+            fade: fade,
+            draggable: draggable,
+            cssEase: cssEase
+        })
+    }
+    
+    let galleryScroll = startSlick("#gallery-scroll" , 2); // Inicialización de Slick en 'gallery-scroll' con las propiedades por default
+    buttonSlick("#button-after","#button-back" , galleryScroll); // Manejo de eventos de los botones
 
-    /*///////////////////////////////////CARRUCEL 1 ///////////////////*/
-    // Inicialización de Slick en 'gallery-scroll'
-    var galleryScroll = $('#gallery-scroll').slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        infinite: true,
-        arrows: false, // oculta las flechas predeterminadas de Slick
-    });
-
-    // Manejo de eventos de los botones
-    $('#button-after').click(function() {
-        galleryScroll.slick('slickNext');
-    });
-
-    $('#button-back').click(function() {
-        galleryScroll.slick('slickPrev');
-    });
-
+    // Funcion que al dar click al boton del proyecto te lleva al 2do carrucel en conjunto con las estadisticas
     $('.expand').on('click', function() {
-        // Encontrar el índice del contenedor en el que se hizo clic
-        var container = $(this).closest('.container-gallery');
-        var currentSlide = $('.container-gallery').index(container);
-
-        var expandContainer = currentSlide - 2 ;
-
-        // Destruir el carrusel 1
-        galleryScroll.slick('unslick');
+        
+        let expandContainer = $(this).data('id');  // Encontrar el índice del contenedor en el que se hizo click a partir del boton seleccionado con su atributo
+        galleryScroll.slick('unslick');    // Destruir el carrusel 1
 
         // Mostrar y ocultar contenedores
         $('.gallery-proyects').hide();
         $('.container-projects').css('display', 'grid');
 
-        // Inicialización de Slick en 'proyect-expand'
-        var proyectExpand = $('#proyect-expand').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            arrows: false,
-            speed: 500,
-            fade: true,
-            draggable: false, // desactiva el arrastre con el mouse
-            cssEase: 'linear' // oculta las flechas predeterminadas de Slick
-        });
+        // Inicialización de los Slick en 'proyect-expand' y estadisticas
+        var proyectExpand = startSlick("#proyect-expand", 1, false, 500, true, true, "linear")
+        var statistics = startSlick("#statistics", 1, false, 500, true, false, "linear")
 
-        var statistics = $('#statistics').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            arrows: false,
-            speed: 500,
-            fade: true,
-            draggable: false, // desactiva el arrastre con el mouse
-            cssEase: 'linear' // oculta las flechas predeterminadas de Slick
-        })
-
-        // Ir al slide seleccionado
+        // Ir al slide seleccionado a partir del boton que se le dio click
         proyectExpand.slick('slickGoTo', expandContainer);
         statistics.slick('slickGoTo' , expandContainer);
 
-        // Manejo de eventos de los botones
+        // Manejo de eventos de los botones, entonces el proyect expand controla el carrucel de las estadisticas
         $('#next-project').click(function() {
             proyectExpand.slick('slickNext');
             statistics.slick('slickGoTo', proyectExpand.slick('slickCurrentSlide'));
         });
-        
         $('#back-project').click(function() {
             proyectExpand.slick('slickPrev');
             statistics.slick('slickGoTo', proyectExpand.slick('slickCurrentSlide'));
         });
 
-        $('#return').click(function(){
-            // Guardar el índice actual del proyectExpand
-            var currentExpandSlide1 = proyectExpand.slick('slickCurrentSlide');
-            var currentExpandSlide2 = statistics.slick('slickCurrentSlide')
+        // Vuelve a la vista previa / return
+        $('#return').off('click').on('click', function(){
+
+            let currentExpandSlide = proyectExpand.slick('slickCurrentSlide');  // Guardar el índice actual del proyectExpand
+            
             // Comprobar si los elementos existen antes de destruir
             if ($.contains(document, proyectExpand[0])) {
                 proyectExpand.slick('unslick');
@@ -168,25 +148,102 @@ $(document).ready(function(){
             if ($.contains(document, statistics[0])) {
                 statistics.slick('unslick');
             }
+
+            // Mostrar y ocultar contenedores
             $('.gallery-proyects').css('display', 'grid');
             $('.container-projects').hide();
 
             // Comprobar si los elementos existen antes de reinicializar
             if ($.contains(document, $('#gallery-scroll')[0])) {
-                galleryScroll = $('#gallery-scroll').slick({
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 1000,
-                    infinite: true,
-                    arrows: false, // oculta las flechas predeterminadas de Slick
-                });
-
-                // Volver al slide correspondiente
-                galleryScroll.slick('slickGoTo', proyectExpand.slick('slickCurrentSlide'));
-
+                let galleryScroll = startSlick("#gallery-scroll" , 2);  // Reconstruccion del galleryScroll original
+                galleryScroll.slick('slickGoTo', currentExpandSlide);   // Volver al slide correspondiente dependiendo el seleccionado
             }
         });
+    });
+
+    // Carruceles //////////////////////////////////////////////////////////////////////////////////////
+    // Carrucel 2 Habilidades / 3 Carruceles que al seleccionar el tipo cambia de 1 al otro carrucel ///
+
+    function initSlick(element) {
+        const slickInstance = element.slick({
+            centerMode: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            infinite: true,
+            arrows: false,
+            centerMode: true,
+        });
+
+        // Cuando el carrusel termine de cambiar, añade la clase 'slick-center' a la diapositiva del centro
+        slickInstance.on('afterChange', function(event, slick, currentSlide) {
+            $('.slick-slide').removeClass('slick-center');
+            $('.slick-slide.slick-current').addClass('slick-center');
+        });
+
+        buttonSlick("#next-skill" , "#back-skill" , slickInstance )
+        return slickInstance;
+    }
+    // Inicialización de Slick en 'typeSkills'
+    $('.skills-btn').on('click', function() {
+        // si el botón ya está activo, no hace nada
+        if ($(this).hasClass('active')) {
+            return;
+        }
+
+        const target = $(this).data('target'); // obtén el ID del target desde el atributo data-target
+
+        $('.skills-section.active').slick('unslick'); // destruye la instancia slick actual
+        $('.skills-section').toggleClass('active', false); // quita la clase 'active' de todas las secciones
+
+        $('#' + target).toggleClass('active', true); // añade la clase 'active' a la sección target
+        initSlick($('#' + target)); // inicializa una nueva instancia slick en el target
+
+        // actualiza el botón activo
+        $('.skills-btn').toggleClass('active', false);
+        $(this).toggleClass('active', true);
+
+        // Manejo de las estadísticas
+        $('.statistics-section').toggleClass('active', false); // quita la clase 'active' de todas las secciones de estadísticas
+
+        const statsTarget = 'statistics-' + target.split('-')[0]; // obtén el ID de la sección de estadísticas desde el target del botón
+        $('#' + statsTarget).toggleClass('active', true); // añade la clase 'active' a la sección de estadísticas target
+    });
+
+
+    let currentSlick;
+
+    $('.slick-skills').each(function() {
+        const slickInstance = initSlick($(this));
+        if ($(this).hasClass('active')) {
+            currentSlick = slickInstance;
+        }
+    });
+    $('.buttons-skills button').on('click', function() {
+        const target = $(this).data('target'); // obtén el ID del target desde el atributo data-target
+        $('.skills-section.active').removeClass('active'); // quita la clase 'active' de la sección actual
+        $('#' + target).addClass('active'); // añade la clase 'active' a la sección target
+
+        currentSlick = $('#' + target).slick('getSlick'); // obtén la instancia slick de la sección target
+    });
+
+
+    $('.skills-btn').on('click', function() {
+        // si el botón ya está activo, no hace nada
+        if ($(this).hasClass('active')) {
+            return;
+        }
+
+        const target = $(this).data('target'); // obtén el ID del target desde el atributo data-target
+        $('.skills-section.active').removeClass('active'); // quita la clase 'active' de la sección actual
+        $('#' + target).addClass('active'); // añade la clase 'active' a la sección target
+
+        currentSlick = $('#' + target).slick('getSlick'); // obtén la instancia slick de la sección target
+
+        // actualiza el botón activo
+        $('.skills-btn.active').removeClass('active');
+        $(this).addClass('active');
     });
 
     /*////////////////////////////////////////ESTADISTICAS //////////////////*/
@@ -275,95 +332,8 @@ $(document).ready(function(){
     }
 
 
-    /*///////////////////////////////////CARRUCEL 2 ///////////////////*/
 
-    function initSlick(element) {
-        const slickInstance = element.slick({
-            centerMode: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            infinite: true,
-            arrows: false,
-            centerMode: true,
-        });
-
-        // Cuando el carrusel termine de cambiar, añade la clase 'slick-center' a la diapositiva del centro
-        slickInstance.on('afterChange', function(event, slick, currentSlide) {
-            $('.slick-slide').removeClass('slick-center');
-            $('.slick-slide.slick-current').addClass('slick-center');
-        });
-
-        $('#next-skill').click(function() {
-            slickInstance.slick('slickNext');
-        });
-        
-        $('#back-skill').click(function() {
-            slickInstance.slick('slickPrev');
-        });
-        return slickInstance;
-    }
-    // Inicialización de Slick en 'typeSkills'
-    $('.skills-btn').on('click', function() {
-        // si el botón ya está activo, no hace nada
-        if ($(this).hasClass('active')) {
-            return;
-        }
-
-        const target = $(this).data('target'); // obtén el ID del target desde el atributo data-target
-
-        $('.skills-section.active').slick('unslick'); // destruye la instancia slick actual
-        $('.skills-section').toggleClass('active', false); // quita la clase 'active' de todas las secciones
-
-        $('#' + target).toggleClass('active', true); // añade la clase 'active' a la sección target
-        initSlick($('#' + target)); // inicializa una nueva instancia slick en el target
-
-        // actualiza el botón activo
-        $('.skills-btn').toggleClass('active', false);
-        $(this).toggleClass('active', true);
-
-        // Manejo de las estadísticas
-        $('.statistics-section').toggleClass('active', false); // quita la clase 'active' de todas las secciones de estadísticas
-
-        const statsTarget = 'statistics-' + target.split('-')[0]; // obtén el ID de la sección de estadísticas desde el target del botón
-        $('#' + statsTarget).toggleClass('active', true); // añade la clase 'active' a la sección de estadísticas target
-    });
-
-
-    let currentSlick;
-
-    $('.slick-skills').each(function() {
-        const slickInstance = initSlick($(this));
-        if ($(this).hasClass('active')) {
-            currentSlick = slickInstance;
-        }
-    });
-    $('.buttons-skills button').on('click', function() {
-        const target = $(this).data('target'); // obtén el ID del target desde el atributo data-target
-        $('.skills-section.active').removeClass('active'); // quita la clase 'active' de la sección actual
-        $('#' + target).addClass('active'); // añade la clase 'active' a la sección target
-
-        currentSlick = $('#' + target).slick('getSlick'); // obtén la instancia slick de la sección target
-    });
-
-
-    $('.skills-btn').on('click', function() {
-        // si el botón ya está activo, no hace nada
-        if ($(this).hasClass('active')) {
-            return;
-        }
-
-        const target = $(this).data('target'); // obtén el ID del target desde el atributo data-target
-        $('.skills-section.active').removeClass('active'); // quita la clase 'active' de la sección actual
-        $('#' + target).addClass('active'); // añade la clase 'active' a la sección target
-
-        currentSlick = $('#' + target).slick('getSlick'); // obtén la instancia slick de la sección target
-
-        // actualiza el botón activo
-        $('.skills-btn.active').removeClass('active');
-        $(this).addClass('active');
-    });
+    
 });
 
 $('.buttons-skills button').on('click', function() {
