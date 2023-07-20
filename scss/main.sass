@@ -16,129 +16,164 @@ html
 
 main .projects .containers-projects .hidden 
     display: none
+
+body
+    display: grid
+    grid-template-columns: 1fr 300px
+    #nav-section
+        display: none
 nav
-    background-color: $secundary-color
-    width: 100%
-    height: 70px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 10px 0 10px 50px
-    .logo
-        width: 60px
-        height: 60px
-        img
-            width: 100%
-            height: 100%
+    grid-area: 1 / 2 / 1 / 3
+    width: 300px
+    height: 100%
     .container-bar
         position: fixed
-        right: 0
-        top: 15px
-        background-color: $secundary-color
-        display: flex
-        justify-content: end
+        top: 0
+        background-color: $focus-color
+        display: grid
+        flex-direction: column
         align-items: center
-        border-top-left-radius: 10px
-        border-bottom-left-radius: 10px
+        width: 300px
+        height: 100%
+        padding: 35px
+        z-index: 1
+        .container-perfil
+            width: 130px
+            height: 130px
+            grid-row: 1
+            grid-column: 1
         .bar
-            width: 520px
-            height: 40px
-            background-color: $focus-color
-            border: solid 2px $contrast-color
-            border-top-left-radius: 10px
-            border-bottom-left-radius: 10px
+            width: 100%
+            height: 70%
             display: flex
+            flex-direction: column
+            justify-content: center
             gap: 20px
-            justify-content: space-between
-            align-items: center
-            padding: 10px 25px 10px 25px
+            grid-row: 2
+            grid-column: 1
             a
-                color: $title-color
+                color:  $title-color
                 text-decoration: none
-                font-size: 1.6rem
+                font-size: 2rem
+
             a:hover
                 font-weight: 700
                 color: $contrast-color
+        .icons
+            width: 100%
+            display: flex
+            flex-direction: column
+            gap: 15px
+            a
+                background-color: $focus-color
+                border: solid 4px $contrast-color
+                width: 70px
+                height: 70px
+                border-radius: 50%
+                padding: 14px
                 
-    .container-perfil
-        position: fixed
-        right: 10px
-        bottom: 10px
-        width: 130px
-        height: 130px
+        .animated
+            animation-duration: 1s
+            animation-fill-mode: both
+            animation-name: bounce
+
+        @keyframes bounce
+            from, 20%, 53%, 80%, to
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+                transform: translate3d(0, 0, 0)
+
+            40%, 43%
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+                transform: translate3d(30px, 0, 0)
+
+            70%
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+                transform: translate3d(15px, 0, 0)
+
+            90%
+                transform: translate3d(4px, 0, 0)
+
+
+
         img
             width: 100%
             height: 100%
 
 main 
-    .aboutMe
-        width: 900px
-        height: 400px
-        margin: 120px auto
+    overflow-x: hidden
+    #aboutMe
+        width: 100%
+        height: 1000px
         display: grid
-        grid-template-columns: repeat(2 , 1fr)
-        grid-template-rows: 1fr 2fr
-        gap: 20px
-        div:nth-child(n)
-            border-radius: 10px
-        .profile
-            background-color: $focus-color
+        place-content: center
+        .aboutMe
+            width: 900px
+            height: 400px
             display: grid
-            place-content: center
-            border: 4px solid $contrast-color
-            h3
-                font-family: 'Candal', sans-serif
-                color: $title-color
-                font-size: 5rem
-                line-height: 44px
-            h1
-                font-family: 'Candal', sans-serif
-                color: $title-color
-                font-size: 2rem
-        .future
-            grid-area: 1 / 2 / 3 / 3
-            background-color: $secundary-color
-            border: 2px solid $contrast-color
-            padding: 30px 
-            h2
-                font-size: 3rem
-                font-family: 'Candal', sans-serif
-                line-height: 30px
-                color: $title-color
-                margin-bottom: 50px
-            p
-                font-size: 1.6rem
-                color: $primary-color
-                margin-bottom: 20px
-        .description
-            background-color: $secundary-color
-            border: 2px solid $contrast-color
-            padding: 20px 30px
-            display: grid
-            place-content: center
-            text-align: center
-            p
-                font-size: 1.6rem
-                color: $primary-color
+            grid-template-columns: repeat(2 , 1fr)
+            grid-template-rows: 1fr 2fr
+            gap: 20px
+            div:nth-child(n)
+                border-radius: 10px
+            .profile
+                background-color: $focus-color
+                display: grid
+                place-content: center
+                border: 4px solid $contrast-color
+                h3
+                    font-family: 'Candal', sans-serif
+                    color: $title-color
+                    font-size: 5rem
+                    line-height: 44px
+                h1
+                    font-family: 'Candal', sans-serif
+                    color: $title-color
+                    font-size: 2rem
+            .future
+                grid-area: 1 / 2 / 3 / 3
+                background-color: $secundary-color
+                border: 2px solid $contrast-color
+                padding: 30px 
+                h2
+                    font-size: 3rem
+                    font-family: 'Candal', sans-serif
+                    line-height: 30px
+                    color: $title-color
+                    margin-bottom: 50px
+                p
+                    font-size: 1.6rem
+                    color: $primary-color
+                    margin-bottom: 20px
+            .description
+                background-color: $secundary-color
+                border: 2px solid $contrast-color
+                padding: 20px 30px
+                display: grid
+                place-content: center
+                text-align: center
+                p
+                    font-size: 1.6rem
+                    color: $primary-color
 
 .projects
     width: 100%
+    height: auto
     background-color: $secundary-color
     display: grid
     place-content: center
     .containers-projects
-        width: 1200px
+        width: 100%
         gap: 120px
-        margin: 120px auto
         display: grid
         align-content: space-around
         justify-content: center
+        padding: 50px 60px
         .title
             font-size: 5rem
             font-family: 'Candal', sans-serif
-            color: $accions-color
+            color: $contrast-color
         .gallery-proyects
-            width: 1200px
+            width: 100%
             height: 500px
             border: 2px solid $contrast-color
             border-radius: 10px
@@ -195,7 +230,7 @@ main
                     border: 4px solid $contrast-color
                     font-weight: 700            
         .container-projects
-            width: 1200px
+            width: 100%
             height: 600px
             display: grid
             grid-template-columns: auto 300px
@@ -218,7 +253,8 @@ main
                         height: 200px
                         position: absolute
                         z-index: 10
-                        left: 30px
+                        width: 200px
+                        left: -60px
                         top: 200px
                     :hover path
                         fill: #FF4D00
@@ -236,6 +272,7 @@ main
                     overflow-y: auto
                     .container-project
                         height: 600px
+                        width: 100%
                         scroll-snap-align: start
                         display: flex
                         align-items: end
@@ -243,7 +280,6 @@ main
                         img
                             width: 100%
                             height: 100%
-                            position: relative
                             border-radius: 10px
                         .links-container
                             display: grid
@@ -287,9 +323,10 @@ main
                         box-shadow: none
                         cursor: pointer
                         height: 200px
+                        width: 200px
                         position: absolute
                         z-index: 10
-                        right: 30px
+                        right: -60px
                         top: 200px
                     :hover path
                         fill: #FF4D00
@@ -306,6 +343,7 @@ main
                 gap: 30px
                 overscroll-behavior-x: contain
                 scroll-snap-type: x mandatory
+                width: 300px
                 .container-statistic
                     display: grid
                     grid-template-rows: 30px 230px 245px
@@ -336,13 +374,13 @@ main
 
 .skills
     width: 100%
-    height: auto
+    height: 1000px
+    padding: 50px 60px
     background-color: $primary-color
     display: grid
     place-content: center
     .container-skills
-        width: 1200px
-        margin: 120px auto
+        width: 100%
         display: grid
         grid-template-columns: 1fr 300px
         place-content: center
@@ -350,18 +388,18 @@ main
         .title
             font-size: 5rem
             font-family: 'Candal', sans-serif
-            color: #f07e4d
+            color: $contrast-color
             grid-area: 1 / 1 / 2 / 4
         .container-move-skills
-            height: 500px
+            height: 450px
             background-color: $focus-color
-            border: solid 4px $contrast-color
+            border: solid 2px $contrast-color
             border-radius: 10px
             padding: 30px
             display: grid
             grid-template-columns: 1fr auto 1fr
             gap: 20px
-            margin-right: 30px
+            margin-right: 24px
             .move-skill
                 width: 40px
                 background-color: transparent
@@ -389,29 +427,27 @@ main
             .active
                 display: block
                 .skill
-                    width: 400px
-                    height: 380px
+                    height: 320px
                     border-radius: 10px
                     margin: 5px
                     display: grid
                     place-content: center
-                    padding: 10px
                     gap: 10px
                     transform: scale(0.7)
                     transition: transform 0.5s ease
-                    div
-                        width: 200px
-                        height: 200px
-                        background-color: #717a8d
+                    img
+                        background-color: #ffffff
                         border: solid 4px $contrast-color
                         border-radius: 50%
+                        object-position: top center
+                        padding: 10px
                     p
                         font-size: 2rem
                         font-weight: 700
                         color: $primary-color
                         text-align: center
                 .slick-center
-                    transform: scale(1)
+                    transform: scale(1.2)
                     transition: transform 0.5s ease
             .buttons-skills
                 grid-area: 2 / 2 / 3 / 3
@@ -433,7 +469,7 @@ main
                     background-color: $accions-color
         .statistics-section
             background-color: $focus-color
-            border: solid 4px $contrast-color
+            border: solid 2px $contrast-color
             border-radius: 10px
             padding: 30px
             color: $primary-color
@@ -442,8 +478,19 @@ main
             display: block
             h2
                 font-size: 2rem
-                margin-bottom: 20px
+                margin-bottom: 60px
                 text-align: center
+            .data
+                display: grid
+                align-items: center
+                grid-template-columns: 1fr 5fr 
+                gap: 10px
+                p
+                    font-size: 1.6rem
+                    vertical-align: center
+                img
+                    width: 25px
+                    height: 30px
         .technology
             display: grid
             grid-template-columns: 85px auto
@@ -461,43 +508,292 @@ main
                 height: 100%
                 transition: width 0.5s ease-in-out
                 border-radius: 10px
-footer
-    width: 100vw
-    height: 400px
-    background-image: url('../Assets/Footer.svg')
-    background-repeat: no-repeat
-    background-size: cover
-    display: grid
-    justify-content: center
-    align-items: flex-end
-    .container-footer
-        width: 900px
-        height: 200px
-        background-color: $primary-color
-        border-top-left-radius: 80px
-        border-top-right-radius: 80px
+.containerStadistics
+    grid-template-rows: 80px 600px 320px /// Creacion del espacio del contenedor, para que el elemento aninadp nieto "" tenga su espacio en el abuelo 
+.hiddenNavBar
+    display: none
+@media (max-width: 1650px)
+    .projects .containers-projects .container-projects #statistics
+        width: 240px
+    .projects .containers-projects .container-projects, .skills .container-skills /// Contenedor Proyectos Expand y Padre del Contenedor Habilidades
+        grid-template-columns: auto 240px
+@media ( max-width: 1500px )
+    .skills .container-skills .container-move-skills .active 
+        .slick-center
+            transform: scale(1)
+        .skill img  /// Tamaño de las imgs de carrucel
+            width: 150px
+            height: 150px
+    
+@media ( max-width: 1400px )
+    .projects .containers-projects .container-projects /// Contenedor Proyectos Expand
+        display: flex
+        flex-direction: column
+        .portafolio
+            height: 650px
+        #statistics
+            overflow: visible
+            height: 320px
+            width: 100%
+            .container-statistic
+                grid-template-rows: 1fr
+                grid-template-columns: 1fr 2fr
+                gap: 30px
+                h1
+                    grid-area: 1 / 2 / 1 / 3 
+                    display: flexbox
+                    height: 50px                    
+                    display: flex
+                    align-items: center
+                    justify-content: end
+                .statistic
+                    grid-area: 2 / 2 / 2 / 3
+                #chartContainer
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    grid-area: 1 / 1 / 3 / 2
+
+    main .skills
+        display: flex
+        width: 100%
+        height: 1200px
+        align-items: center
+        justify-content: center
+        .container-skills
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 30px
+            height: 1000px
+            .statistics-section
+                width: 100%
+                h2
+                    margin-bottom: 30px
+                .container-data
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+
+            .container-move-skills
+                margin: 0
+    .projects .containers-projects .container-projects #statistics .container-statistic
+        grid-template-rows: inherit
+    .skills .container-skills .container-move-skills .active 
+        .slick-center
+            transform: scale(1.2)
+
+@media (max-width: 1350px)     
+    main 
+        #aboutMe 
+            padding: 50px 120px
+            .aboutMe
+                width: 100%
+                grid-template-rows: auto
+@media (max-width: 1200px)
+    .skills .container-skills .container-move-skills
+        width: 100%
+        .buttons-skills
+            grid-area: 2 / 1 / 3 / 4
+@media (max-width: 1130px)   
+    .projects .containers-projects .container-projects #statistics
+        height: 300px
+    main #aboutMe .aboutMe
+        width: 100%
+        height: auto
+        .profile
+            height: 120px
+            grid-area: 1 / 1 / 1 / 3 
+        .future
+            grid-area: 3 / 1 / 3 / 3
+        .description
+            grid-area: 2 / 1 / 2 / 3
+
+    .projects .containers-projects .gallery-proyects
+        gap: 0
+         
+    .skills .container-skills .container-move-skills 
+        height: auto
+        .active .skill
+            height: 200px
+
+    .projects .containers-projects .container-projects .portafolio #proyect-expand .container-project
+        height: 600px
+    .skills .container-skills .container-move-skills .active 
+        .slick-center
+            transform: scale(1)
+
+@media (max-width: 1080px) 
+    body
+        grid-template-columns: 1fr 220px
+    nav 
+        width: 220px
+        .container-bar 
+            width: 220px
+    .projects .containers-projects .gallery-proyects 
+        height: auto
+        padding: 10px
+
+    .skills .container-skills .container-move-skills
+        gap: 10px
+        padding: 10px 10px 30px 10px
+    .skills .container-skills .container-move-skills .active .skill img
+        width: 120px
+        height: 120px
+
+    .projects .containers-projects .container-projects .portafolio #proyect-expand .container-project
+        height: 400px
+    .projects .containers-projects .container-projects .portafolio .left .container-move 
+        top: 150px
+        left: 0
+        width: 100px
+        height: 120px
+    .projects .containers-projects .container-projects .portafolio .right .container-move 
+        top: 150px
+        right: 0
+        width: 100px
+        height: 120px
+    .containerStadistics
+        grid-template-rows: 80px 600px 30px
+@media ( max-width: 875px)
+    main #aboutMe 
+        padding: 60px 50px
+    .skills .container-skills .container-move-skills .active 
+        .skill img  /// Tamaño de las imgs de carrucel
+            width: 100px
+            height: 100px
+@media ( max-width: 835px )
+    .skills .container-skills .container-move-skills .skills-section
+        grid-area: 1 / 1 / 2 / 4
+    .skills .container-skills .container-move-skills #back-skill
+        display: none
+    .skills .container-skills .container-move-skills #next-skill
+        display: none
+    .skills .container-skills .container-move-skills
+        padding: 20px
+    .projects .containers-projects .gallery-proyects #gallery-scroll
+        grid-area: 1 / 1 / 3 / 4
+
+    .projects .containers-projects .gallery-proyects .container-move
+        display: none
+    .projects .containers-projects .gallery-proyects
+        padding: 20px
+    .projects .containers-projects .container-projects .portafolio .right .container-move
+        display: none
+    .projects .containers-projects .container-projects .portafolio .left .container-move
+        display: none
+@media ( max-width: 795px )
+    main .skills
+        padding: 20px
+        height: 850px
+        overflow: hidden
+    .projects .containers-projects
+        padding: 50px 20px
+    .skills .container-skills .container-move-skills .active .skill
+        height: 180px
+@media ( max-width: 745px )
+    .skills .container-skills .container-move-skills .active .skill
+        height: 170px
+@media ( max-width: 700px)
+    body
+        display: inherit
+        #nav-section
+            display: flex
+            position: fixed
+            right: 30px
+            top: 30px
+            z-index: 1000
+            background: none
+            border: none
+            cursor: pointer
+    nav
+        grid-area: 1 / 2 / 1 / 3
+        width: 300px
+        height: 100%
+        .container-bar
+            position: fixed
+    nav .container-bar
+        right: 0
+    main #aboutMe
+        padding: 20px
+    .skills .container-skills .container-move-skills .active 
+        .skill img  /// Tamaño de las imgs de carrucel
+            width: 120px
+            height: 120px
+@media ( max-width: 600px  )
+    .skills .container-skills .container-move-skills .active .skill
+        height: 150px
+    .projects .containers-projects .container-projects /// Contenedor Proyectos Expand
+        #statistics
+            .container-statistic
+                display: grid
+                grid-template-rows: auto 150px auto
+                grid-template-columns: 1fr 1fr
+                h1
+                    grid-area: 1 / 1 / 2 / 2
+                    text-align: end
+                .statistic
+                    grid-area: 2 / 1 / 2 / 3
+                #chartContainer
+                    grid-area: 1 / 2 / 2 / 3 
+@media (max-width: 500px) 
+
+    .projects .containers-projects .gallery-proyects
+        padding: 0
+    .skills .container-skills .container-move-skills .buttons-skills 
         display: grid
+        width: 100%
+        height: 100%
         place-content: center
-        gap: 20px
-        .networks
-            width: 500px
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: auto auto
+        gap: 8px
+        align-items: center
+        justify-items: center
+    .skills .container-skills .container-move-skills .buttons-skills button
+        width: 100%
+    .skills .container-skills .container-move-skills .buttons-skills button:nth-child(3) 
+        grid-area: 2 / 1 / 2 / 3
+    .skills .container-skills .container-move-skills .active 
+        .skill img  /// Tamaño de las imgs de carrucel
+            width: 100px
+            height: 100px
+@media ( max-width: 450px)
+    .projects .containers-projects .gallery-proyects #gallery-scroll .container-gallery
+        margin: 0
+        border: solid 2px $contrast-color
+    .projects .containers-projects .gallery-proyects
+        border: none
+    .skills .container-skills .container-move-skills .active .skill
+        height: 120px
+        img  /// Tamaño de las imgs de carrucel
+            width: 80px
             height: 80px
-            display: grid
-            grid-auto-flow: column
-            justify-content: space-around
-            padding: 0 50px
-            .network
-                display: flex
-                flex-direction: row
-                width: 80px
-                height: 80px
-                border-radius: 50%
-                border: solid 4px $contrast-color
-                background: $focus-color
-        .contactMe
-            width: 500px
-            p
-                font-size: 2rem
-                font-weight: 700px
-                text-align: center
-                font-family: 'Candal', sans-serif
+@media ( max-width:390px )
+    .skills .container-skills .container-move-skills .active .skill
+        height: 100px
+        img  /// Tamaño de las imgs de carrucel
+            width: 60px
+            height: 60px
+@media (max-width: 370px)
+    .skills .container-skills .container-move-skills .buttons-skills 
+        grid-template-columns: 5fr 2fr
+        button:nth-child(2) 
+            grid-area: 1 / 2 / 3 / 3
+            height: 100%
+        button:nth-child(3) 
+            grid-area: 2 / 1 / 2 / 2
+@media ( max-width:345px )
+    .skills .container-skills .container-move-skills .active .skill
+        height: 100px
+        img  /// Tamaño de las imgs de carrucel
+            width: 50px
+            height: 50px
+@media ( max-height: 600px)
+    nav .container-bar .icons
+        flex-direction: row
+@media ( max-height: 520px)
+    nav .container-bar .container-perfil
+        display: none
+    nav .container-bar .bar
+        grid-row: 1

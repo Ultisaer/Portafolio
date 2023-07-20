@@ -25,21 +25,21 @@ $(document).ready(function(){
     // Datos de las habilidades
     const skillGroup = {
         '1': {
-            labels: ['React', 'JS', 'Sass', 'JavaScript', 'CSS'],
-            img: [],
-            data: [80, 70, 75, 85, 90],
+            labels: ['HTML', 'CSS', 'JavaScript', 'Sass' , 'TypeScript'],
+            imgData : ['./Assets/IconsType/HTML.svg', './Assets/IconsType/CSS.svg', './Assets/IconsType/JS.svg', './Assets/IconsType/SASS.svg', './Assets/IconsType/CSS.svg'],
+            img : ['./Assets/LogoType/HTML.png','./Assets/LogoType/CSS.png', './Assets/LogoType/JS.png', './Assets/LogoType/JS.png' , './Assets/LogoType/CSS.png'],
             id: "type",
         },        
         '2': {
             labels: ['SQL', 'MariaDB', 'MySQL', 'MongoDB' , 'JavaScript'],
-            img: [],
-            data: [25, 30, 35, 10, 70],
-            id: "database",
+            imgData : ['./Assets/IconsType/HTML.svg', './Assets/IconsType/CSS.svg', './Assets/IconsType/JS.svg', './Assets/IconsType/SASS.svg', './Assets/IconsType/SASS.svg'],
+            img : ['./Assets/LogoType/HTML.png','./Assets/LogoType/CSS.png', './Assets/LogoType/JS.png', './Assets/LogoType/CSS.png', './Assets/LogoType/JS.png'],
+            id: "dataBase",
         },
         '3': {
             labels: ['VisualCode', 'GPT-4', 'Notion', 'StabilityIA', 'Terminal'],
-            img: [],
-            data: [20, 30, 40, 10, 80],
+            imgData : ['./Assets/IconsType/HTML.svg', './Assets/IconsType/CSS.svg', './Assets/IconsType/JS.svg', './Assets/IconsType/SASS.svg', './Assets/IconsType/SASS.svg'],
+            img : ['./Assets/LogoType/HTML.png','./Assets/LogoType/CSS.png', './Assets/LogoType/JS.png', './Assets/LogoType/JS.png', './Assets/LogoType/JS.png'],
             id: "tools",
     }};
     // Creacion de los elementos del proyecto principal en su vista mas grande
@@ -64,34 +64,95 @@ $(document).ready(function(){
     function generateSkills() {
         Object.keys(skillGroup).forEach(group => {
             const container = document.querySelector(`#${skillGroup[group].id}`);
-            skillGroup[group].labels.forEach(label => {
-
+            const skillsData = document.querySelector(`#statistics-${skillGroup[group].id}`);
+            let containerDataDiv = document.createElement("div"); // Crear el contenedor aquí
+            containerDataDiv.className = "container-data";
+            
+            skillGroup[group].labels.forEach((label, index) => {
                 let skillDiv = document.createElement("div");
                 skillDiv.className = "skill";
-                
-                let p = document.createElement("p");
-                p.innerText = label;
-                
-                skillDiv.append(document.createElement("div"), p);
+    
+                let imgContainer = document.createElement("img");
+                imgContainer.src = skillGroup[group].img[index]; 
+                imgContainer.alt = label;
+    
+                let dataDiv = document.createElement("div");
+                dataDiv.className = "data";
+                let imgSkillsData = document.createElement("img");
+                imgSkillsData.src = skillGroup[group].imgData[index]; 
+                imgSkillsData.alt = label; 
+                let pSkillsData = document.createElement("p");
+                pSkillsData.innerHTML = label;
+    
+                skillDiv.append(imgContainer);
                 container.appendChild(skillDiv);
+                
+                dataDiv.append(imgSkillsData, pSkillsData);
+                containerDataDiv.append(dataDiv); // Añadir dataDiv a containerDataDiv
             });
+            
+            skillsData.append(containerDataDiv); // Añadir containerDataDiv a skillsData después del bucle
         });
     }
+    
+    
         
     generateSkills()
     generateProjects()
 
+    ///////////////////////////////////////CSS ANIMATION
+    $('.animation-element').click(function(){
+        $('.icons').addClass('animated');
+        setTimeout(function() {
+            $('.icons').removeClass('animated');
+          }, 1000);
+    })
     // Carruceles //////////////////////////////////////////////////////////////////////////////////////
     // Carrucel 1 Principal / 2 Carruceles anidados que al seleccionar un elemento se refleja en el otro
 
-    function buttonSlick(idNext, idBack, slickSettings) {     // Funcion de creacion de los botones cuando se da click retroceden o avanzan
-        $(idNext).click(() => slickSettings.slick("slickNext") )
-        $(idBack).click(() => slickSettings.slick("slickPrev"))
+    function buttonSlick(classNext, classBack, slickSettings) {     // Funcion de creacion de los botones cuando se da click retroceden o avanzan
+        $(classNext).click(() => slickSettings.slick("slickNext"))
+        $(classBack).click(() => slickSettings.slick("slickPrev"))
     }
+    
+    let nav = window.matchMedia('(max-width: 700px)');
+    
+    ////////////////////////////Funcionalidad del navbar
+    function screenSizeChange(e) {
+        if (e.matches) {
+            /* la anchura de la ventana es 700px o menos */
+            $('.container-bar').css('display', 'none');  // Establecer display a 'none'
+            $('#nav-section').on('click', function() {
+                event.stopPropagation(); // Para evitar la propagación del evento.
+                $('.container-bar').toggle();  // Cambiar entre 'flex' y 'none' en cada clic
+            });
+
+            $(document).on('click', function() {
+                // Comprueba si el contenedor está visible.
+                if ($('.container-bar').css('display') === 'grid' && !$(event.target).closest('.container-bar').length)   {
+                    
+                    $('.container-bar').css('display', 'none'); // Cambia a 'none'.
+                    
+                }
+            });
+    
+        } else {
+            /* la anchura de la ventana es más de 700px */
+            $('#nav-section').off('click');
+            $(document).off('click');
+            $('.container-bar').css('display', 'grid');  // Establecer display a 'flex'
+        }
+    }
+    
+    
+    
+    nav.addListener(screenSizeChange);
+    screenSizeChange(nav);  
+    
     
     // Funcion de los slicks de todos los proyectos
     function startSlick(selector, slides = 1 , autoplay = true, speed = 700, fade = false, draggable = true, cssEase = "ease" ){
-        return $(selector).slick({
+        let slickInstance = $(selector).slick({
             slidesToShow: slides,
             slidesToScroll: 1,
             infinite: true,
@@ -101,11 +162,36 @@ $(document).ready(function(){
             speed: speed,
             fade: fade,
             draggable: draggable,
-            cssEase: cssEase
+            cssEase: cssEase,
+            accessibility: true,
         })
+
+        return slickInstance;
     }
     
-    let galleryScroll = startSlick("#gallery-scroll" , 2); // Inicialización de Slick en 'gallery-scroll' con las propiedades por default
+    let galleryScroll;
+    let statistics;
+
+    function updateSlick(slidesToShow) {
+        if (galleryScroll) {
+            galleryScroll.slick('unslick');
+        }
+        galleryScroll = startSlick("#gallery-scroll", slidesToShow);
+    }
+
+    let mql = window.matchMedia('(max-width: 1400px)');
+    function screenTest(e) {
+        if (e.matches) {
+            /* la anchura de la ventana es 1400px o menos */
+            updateSlick(1);
+        } else {
+            /* la anchura de la ventana es más de 1400px */
+            updateSlick(2);
+        }
+    }
+    mql.addListener(screenTest);
+    screenTest(mql); // para inicializar correctamente
+
     buttonSlick("#button-after","#button-back" , galleryScroll); // Manejo de eventos de los botones
 
     // Funcion que al dar click al boton del proyecto te lleva al 2do carrucel en conjunto con las estadisticas
@@ -116,21 +202,67 @@ $(document).ready(function(){
 
         // Mostrar y ocultar contenedores
         $('.gallery-proyects').hide();
-        $('.container-projects').css('display', 'grid');
 
-        // Inicialización de los Slick en 'proyect-expand' y estadisticas
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Observar los cambios en el carrusel
+
+        let mql = window.matchMedia('(max-width: 1400px)');
+        let isHidden = false;
+        
+        function screenTestDisplay(e) {
+            if (isHidden) {
+                return;
+            }
+            if (e.matches) {
+                /* la anchura de la ventana es 1400px o menos */
+                $('.container-projects').css('display', 'flex');
+                $('.projects .containers-projects').addClass('containerStadistics');
+                updateStatistics();
+
+            } else {
+                /* la anchura de la ventana es más de 1400px */
+                $('.container-projects').css('display', 'grid');
+                $('.projects .containers-projects').removeClass('containerStadistics');
+                updateStatistics();
+            }
+        }
+        
+        mql.addListener(screenTestDisplay);
+        screenTestDisplay(mql); // para inicializar correctamente
+
+
+
+        // Inicialización de los Slick en 'proyect-expand' y estadisticas , guarda el dato de los slides 
         var proyectExpand = startSlick("#proyect-expand", 1, false, 500, true, true, "linear")
-        var statistics = startSlick("#statistics", 1, false, 500, true, false, "linear")
+        proyectExpand.on('afterChange', function(event, slick, currentSlide){
+            //console.log(`Estás en el slide ${currentSlide} del carrusel ${slick.$slider[0].id}`);
+            statistics.slick('slickGoTo', currentSlide);
+        });
+
+        function updateStatistics() {
+            if (statistics) {
+                statistics.slick('unslick');
+            }
+            statistics = startSlick("#statistics", 1, false, 500, true, false, "linear");
+            statistics.on('afterChange', function(event, slick, currentSlide){
+                //console.log(`Estás en el slide ${currentSlide} del carrusel ${slick.$slider[0].id}`);
+                proyectExpand.slick('slickGoTo', currentSlide);
+            });
+        }
+
 
         // Ir al slide seleccionado a partir del boton que se le dio click
         proyectExpand.slick('slickGoTo', expandContainer);
         statistics.slick('slickGoTo' , expandContainer);
 
+
         // Manejo de eventos de los botones, entonces el proyect expand controla el carrucel de las estadisticas
         $('#next-project').click(function() {
             proyectExpand.slick('slickNext');
             statistics.slick('slickGoTo', proyectExpand.slick('slickCurrentSlide'));
-        });
+        }
+        );
         $('#back-project').click(function() {
             proyectExpand.slick('slickPrev');
             statistics.slick('slickGoTo', proyectExpand.slick('slickCurrentSlide'));
@@ -140,7 +272,8 @@ $(document).ready(function(){
         $('#return').off('click').on('click', function(){
 
             let currentExpandSlide = proyectExpand.slick('slickCurrentSlide');  // Guardar el índice actual del proyectExpand
-            
+            $('.projects .containers-projects').removeClass('containerStadistics');
+
             // Comprobar si los elementos existen antes de destruir
             if ($.contains(document, proyectExpand[0])) {
                 proyectExpand.slick('unslick');
@@ -152,10 +285,11 @@ $(document).ready(function(){
             // Mostrar y ocultar contenedores
             $('.gallery-proyects').css('display', 'grid');
             $('.container-projects').hide();
+            isHidden = true;
 
             // Comprobar si los elementos existen antes de reinicializar
             if ($.contains(document, $('#gallery-scroll')[0])) {
-                let galleryScroll = startSlick("#gallery-scroll" , 2);  // Reconstruccion del galleryScroll original
+                screenTest(mql); // para inicializar correctamente el slick dependiendo el tamaño de pantalla
                 galleryScroll.slick('slickGoTo', currentExpandSlide);   // Volver al slide correspondiente dependiendo el seleccionado
             }
         });
@@ -173,7 +307,8 @@ $(document).ready(function(){
             autoplaySpeed: 3000,
             infinite: true,
             arrows: false,
-            centerMode: true,
+            centerMode: true,    
+            accessibility: true,
         });
 
         // Cuando el carrusel termine de cambiar, añade la clase 'slick-center' a la diapositiva del centro
@@ -248,7 +383,14 @@ $(document).ready(function(){
 
     /*////////////////////////////////////////ESTADISTICAS //////////////////*/
     function createDashboard(projectID, projectData) {
-        var ctx = document.getElementById('myChart' + projectID).getContext('2d');
+        let canvas = document.getElementById('myChart' + projectID);
+        let container = canvas.parentElement;
+        container.style.width = '99%';
+        container.style.height = '99%';
+        let ctx = canvas.getContext('2d');
+
+            // Si ya existe un gráfico, destruirlo antes de crear uno nuevo
+
 
         // Obtener los datos del proyecto
         var labels = projectData.labels;
@@ -288,6 +430,8 @@ $(document).ready(function(){
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false, // Añade esta línea
                 cutout: '70%',
                 plugins: {
                     legend: {
@@ -320,20 +464,12 @@ $(document).ready(function(){
         }
     }
 
-    // Crear el dashboard para las skills
-    for (var element in skillGroup)
-    {
-        createDashboard(`Skills${element}`, skillGroup[`${element}`]);
-    }
-
     // Crear los dashboards para cada proyecto
     for (var projectID in projectsData) {
         createDashboard(projectID, projectsData[projectID]);
     }
 
 
-
-    
 });
 
 $('.buttons-skills button').on('click', function() {
@@ -341,3 +477,4 @@ $('.buttons-skills button').on('click', function() {
     $('.skills-section.active').removeClass('active'); // quita la clase 'active' de la sección actual
     $('#' + target).addClass('active'); // añade la clase 'active' a la sección target
 });
+
