@@ -13,6 +13,6 @@
       }
     }
   },
-  "postCreateCommand": "sudo npm i npm -g",
+  "postCreateCommand": "sudo npm i npm -g && npm i",
   "remoteUser": "node"
 }
