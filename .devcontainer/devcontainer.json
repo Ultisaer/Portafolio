@@ -1,0 +1,14 @@
+{
+  "name": "ultisaer-portafolio",
+  "image": "jhordyess/node",
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  "postCreateCommand": "sudo npm i npm -g",
+  "remoteUser": "node"
+}
