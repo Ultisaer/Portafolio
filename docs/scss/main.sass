@@ -20,86 +20,104 @@ main .projects .containers-projects .hidden
 body
     display: grid
     grid-template-columns: 1fr 300px
-    #nav-section
+    #menu
         display: none
-nav
+
+.nav
     grid-area: 1 / 2 / 1 / 3
     width: 300px
     height: 100%
-    .container-bar
-        position: fixed
-        top: 0
-        background-color: $focus-color
-        display: grid
+.nav--element
+    position: fixed
+    top: 0
+    background-color: $focus-color
+    display: grid
+    flex-direction: column
+    align-items: center
+    width: 300px
+    height: 100%
+    padding: 35px
+    z-index: 1
+    .container-perfil
+        width: 130px
+        height: 130px
+        grid-row: 1
+        grid-column: 1
+    .bar
+        width: 100%
+        height: 70%
+        display: flex
         flex-direction: column
-        align-items: center
-        width: 300px
+        justify-content: center
+        gap: 20px
+        grid-row: 2
+        grid-column: 1
+        a
+            color: $title-color
+            text-decoration: none
+            font-size: 2rem
+
+        a:hover
+            font-weight: 700
+            color: $contrast-color
+    .icons
+        width: 100%
+        display: flex
+        flex-direction: column
+        gap: 15px
+        a
+            background-color: $focus-color
+            border: solid 4px $contrast-color
+            width: 70px
+            height: 70px
+            border-radius: 50%
+            padding: 14px
+
+    .animated
+        animation-duration: 1s
+        animation-fill-mode: both
+        animation-name: bounce
+
+    @keyframes bounce
+        from
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+            transform: translate3d(0, 0, 0)
+        20%
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+            transform: translate3d(0, 0, 0)
+
+        53%
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+            transform: translate3d(0, 0, 0)
+
+        80%
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+            transform: translate3d(0, 0, 0)
+
+        to
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+            transform: translate3d(0, 0, 0)
+
+        40%
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+            transform: translate3d(30px, 0, 0)
+
+        43%
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+            transform: translate3d(30px, 0, 0)
+
+        70%
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+            transform: translate3d(15px, 0, 0)
+
+        90%
+            transform: translate3d(4px, 0, 0)
+
+    img
+        width: 100%
         height: 100%
-        padding: 35px
-        z-index: 1
-        .container-perfil
-            width: 130px
-            height: 130px
-            grid-row: 1
-            grid-column: 1
-        .bar
-            width: 100%
-            height: 70%
-            display: flex
-            flex-direction: column
-            justify-content: center
-            gap: 20px
-            grid-row: 2
-            grid-column: 1
-            a
-                color:  $title-color
-                text-decoration: none
-                font-size: 2rem
 
-            a:hover
-                font-weight: 700
-                color: $contrast-color
-        .icons
-            width: 100%
-            display: flex
-            flex-direction: column
-            gap: 15px
-            a
-                background-color: $focus-color
-                border: solid 4px $contrast-color
-                width: 70px
-                height: 70px
-                border-radius: 50%
-                padding: 14px
-                
-        .animated
-            animation-duration: 1s
-            animation-fill-mode: both
-            animation-name: bounce
-
-        @keyframes bounce
-            from, 20%, 53%, 80%, to
-                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
-                transform: translate3d(0, 0, 0)
-
-            40%, 43%
-                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
-                transform: translate3d(30px, 0, 0)
-
-            70%
-                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
-                transform: translate3d(15px, 0, 0)
-
-            90%
-                transform: translate3d(4px, 0, 0)
-
-
-
-        img
-            width: 100%
-            height: 100%
-
-main 
+main
     overflow-x: hidden
     #aboutMe
         width: 100%
@@ -133,7 +151,7 @@ main
                 grid-area: 1 / 2 / 3 / 3
                 background-color: $secundary-color
                 border: 2px solid $contrast-color
-                padding: 30px 
+                padding: 30px
                 h2
                     font-size: 3rem
                     font-family: 'Candal', sans-serif
@@ -228,7 +246,7 @@ main
                     background-color: $accions-color
                     color: $focus-color
                     border: 4px solid $contrast-color
-                    font-weight: 700            
+                    font-weight: 700
         .container-projects
             width: 100%
             height: 600px
@@ -258,7 +276,7 @@ main
                         top: 200px
                     :hover path
                         fill: #FF4D00
-                    #return                 
+                    #return
                         background-color: transparent
                         border: none
                         box-shadow: none
@@ -354,7 +372,7 @@ main
                     .statistic
                         height: 160px
                         margin-top: 10px
-                        .technology 
+                        .technology
                             display: flex
                             align-items: center
                             margin-bottom: 10px
@@ -363,12 +381,12 @@ main
                                 font-size: 1.6rem
                                 display: flexbox
                                 width: 85px
-                            .bar-container 
+                            .bar-container
                                 flex-grow: 1
                                 height: 20px
                                 margin-left: 10px
                                 border-radius: 10px
-                                .bar 
+                                .bar
                                     height: 100%
                                     border-radius: 10px
 
@@ -459,7 +477,7 @@ main
                     width: 160px
                     height: 40px
                     border-radius: 10px
-                    border: solid 2px $contrast-color 
+                    border: solid 2px $contrast-color
                     background-color: $focus-color
                     font-family: 'Montserrat', sans-serif
                     font-size: 1.6rem
@@ -483,7 +501,7 @@ main
             .data
                 display: grid
                 align-items: center
-                grid-template-columns: 1fr 5fr 
+                grid-template-columns: 1fr 5fr
                 gap: 10px
                 p
                     font-size: 1.6rem
@@ -509,7 +527,7 @@ main
                 transition: width 0.5s ease-in-out
                 border-radius: 10px
 .containerStadistics
-    grid-template-rows: 80px 600px 320px /// Creacion del espacio del contenedor, para que el elemento aninadp nieto "" tenga su espacio en el abuelo 
+    grid-template-rows: 80px 600px 320px /// Creacion del espacio del contenedor, para que el elemento aninadp nieto "" tenga su espacio en el abuelo
 .hiddenNavBar
     display: none
 @media (max-width: 1650px)
@@ -518,13 +536,13 @@ main
     .projects .containers-projects .container-projects, .skills .container-skills /// Contenedor Proyectos Expand y Padre del Contenedor Habilidades
         grid-template-columns: auto 240px
 @media ( max-width: 1500px )
-    .skills .container-skills .container-move-skills .active 
+    .skills .container-skills .container-move-skills .active
         .slick-center
             transform: scale(1)
         .skill img  /// Tamaño de las imgs de carrucel
             width: 150px
             height: 150px
-    
+
 @media ( max-width: 1400px )
     .projects .containers-projects .container-projects /// Contenedor Proyectos Expand
         display: flex
@@ -540,9 +558,9 @@ main
                 grid-template-columns: 1fr 2fr
                 gap: 30px
                 h1
-                    grid-area: 1 / 2 / 1 / 3 
+                    grid-area: 1 / 2 / 1 / 3
                     display: flexbox
-                    height: 50px                    
+                    height: 50px
                     display: flex
                     align-items: center
                     justify-content: end
@@ -579,13 +597,13 @@ main
                 margin: 0
     .projects .containers-projects .container-projects #statistics .container-statistic
         grid-template-rows: inherit
-    .skills .container-skills .container-move-skills .active 
+    .skills .container-skills .container-move-skills .active
         .slick-center
             transform: scale(1.2)
 
-@media (max-width: 1350px)     
-    main 
-        #aboutMe 
+@media (max-width: 1350px)
+    main
+        #aboutMe
             padding: 50px 120px
             .aboutMe
                 width: 100%
@@ -595,7 +613,7 @@ main
         width: 100%
         .buttons-skills
             grid-area: 2 / 1 / 3 / 4
-@media (max-width: 1130px)   
+@media (max-width: 1130px)
     .projects .containers-projects .container-projects #statistics
         height: 300px
     main #aboutMe .aboutMe
@@ -603,7 +621,7 @@ main
         height: auto
         .profile
             height: 120px
-            grid-area: 1 / 1 / 1 / 3 
+            grid-area: 1 / 1 / 1 / 3
         .future
             grid-area: 3 / 1 / 3 / 3
         .description
@@ -611,26 +629,26 @@ main
 
     .projects .containers-projects .gallery-proyects
         gap: 0
-         
-    .skills .container-skills .container-move-skills 
+
+    .skills .container-skills .container-move-skills
         height: auto
         .active .skill
             height: 200px
 
     .projects .containers-projects .container-projects .portafolio #proyect-expand .container-project
         height: 600px
-    .skills .container-skills .container-move-skills .active 
+    .skills .container-skills .container-move-skills .active
         .slick-center
             transform: scale(1)
 
-@media (max-width: 1080px) 
+@media (max-width: 1080px)
     body
         grid-template-columns: 1fr 220px
-    nav 
+    .nav
         width: 220px
-        .container-bar 
-            width: 220px
-    .projects .containers-projects .gallery-proyects 
+    .nav--element
+        width: 220px
+    .projects .containers-projects .gallery-proyects
         height: auto
         padding: 10px
 
@@ -643,12 +661,12 @@ main
 
     .projects .containers-projects .container-projects .portafolio #proyect-expand .container-project
         height: 400px
-    .projects .containers-projects .container-projects .portafolio .left .container-move 
+    .projects .containers-projects .container-projects .portafolio .left .container-move
         top: 150px
         left: 0
         width: 100px
         height: 120px
-    .projects .containers-projects .container-projects .portafolio .right .container-move 
+    .projects .containers-projects .container-projects .portafolio .right .container-move
         top: 150px
         right: 0
         width: 100px
@@ -658,7 +676,7 @@ main
 @media ( max-width: 875px)
     main #aboutMe 
         padding: 60px 50px
-    .skills .container-skills .container-move-skills .active 
+    .skills .container-skills .container-move-skills .active
         .skill img  /// Tamaño de las imgs de carrucel
             width: 100px
             height: 100px
@@ -697,12 +715,13 @@ main
 @media ( max-width: 700px)
     body
         display: inherit
-        #nav-section
+        #menu
             display: flex
             position: fixed
             right: 30px
             top: 30px
             z-index: 1000
+        .menu--mobile       
             background: none
             border: none
             cursor: pointer
@@ -710,13 +729,13 @@ main
         grid-area: 1 / 2 / 1 / 3
         width: 300px
         height: 100%
-        .container-bar
-            position: fixed
-    nav .container-bar
+    .nav--element
+        position: fixed
+    .nav--element
         right: 0
     main #aboutMe
-        padding: 20px
-    .skills .container-skills .container-move-skills .active 
+            padding: 20px
+    .skills .container-skills .container-move-skills .active
         .skill img  /// Tamaño de las imgs de carrucel
             width: 120px
             height: 120px
@@ -735,12 +754,12 @@ main
                 .statistic
                     grid-area: 2 / 1 / 2 / 3
                 #chartContainer
-                    grid-area: 1 / 2 / 2 / 3 
-@media (max-width: 500px) 
+                    grid-area: 1 / 2 / 2 / 3
+@media (max-width: 500px)
 
     .projects .containers-projects .gallery-proyects
         padding: 0
-    .skills .container-skills .container-move-skills .buttons-skills 
+    .skills .container-skills .container-move-skills .buttons-skills
         display: grid
         width: 100%
         height: 100%
@@ -752,9 +771,9 @@ main
         justify-items: center
     .skills .container-skills .container-move-skills .buttons-skills button
         width: 100%
-    .skills .container-skills .container-move-skills .buttons-skills button:nth-child(3) 
+    .skills .container-skills .container-move-skills .buttons-skills button:nth-child(3)
         grid-area: 2 / 1 / 2 / 3
-    .skills .container-skills .container-move-skills .active 
+    .skills .container-skills .container-move-skills .active
         .skill img  /// Tamaño de las imgs de carrucel
             width: 100px
             height: 100px
@@ -772,16 +791,16 @@ main
 @media ( max-width:390px )
     .skills .container-skills .container-move-skills .active .skill
         height: 100px
-        img  /// Tamaño de las imgs de carrucel
+        img  /// Tamaño de lastainer-barnav--element imgs de carrucel
             width: 60px
             height: 60px
 @media (max-width: 370px)
-    .skills .container-skills .container-move-skills .buttons-skills 
+    .skills .container-skills .container-move-skills .buttons-skills
         grid-template-columns: 5fr 2fr
-        button:nth-child(2) 
+        button:nth-child(2)
             grid-area: 1 / 2 / 3 / 3
             height: 100%
-        button:nth-child(3) 
+        button:nth-child(3)
             grid-area: 2 / 1 / 2 / 2
 @media ( max-width:345px )
     .skills .container-skills .container-move-skills .active .skill
@@ -790,10 +809,10 @@ main
             width: 50px
             height: 50px
 @media ( max-height: 600px)
-    nav .container-bar .icons
+    .nav .nav--element .icons
         flex-direction: row
 @media ( max-height: 520px)
-    nav .container-bar .container-perfil
+    .nav .nav--element .container-perfil
         display: none
-    nav .container-bar .bar
+    .nav .nav--element .bar
         grid-row: 1

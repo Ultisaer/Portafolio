@@ -121,26 +121,26 @@ $(document).ready(function(){
     function screenSizeChange(e) {
         if (e.matches) {
             /* la anchura de la ventana es 700px o menos */
-            $('.container-bar').css('display', 'none');  // Establecer display a 'none'
-            $('#nav-section').on('click', function() {
+            $('.nav--element').css('display', 'none');  // Establecer display a 'none'
+            $('#menu').on('click', function() {
                 event.stopPropagation(); // Para evitar la propagación del evento.
-                $('.container-bar').toggle();  // Cambiar entre 'flex' y 'none' en cada clic
+                $('.nav--element').toggle();  // Cambiar entre 'flex' y 'none' en cada clic
             });
 
             $(document).on('click', function() {
                 // Comprueba si el contenedor está visible.
-                if ($('.container-bar').css('display') === 'grid' && !$(event.target).closest('.container-bar').length)   {
+                if ($('.nav--element').css('display') === 'grid' && !$(event.target).closest('.nav--element').length)   {
                     
-                    $('.container-bar').css('display', 'none'); // Cambia a 'none'.
+                    $('.nav--element').css('display', 'none'); // Cambia a 'none'.
                     
                 }
             });
     
         } else {
             /* la anchura de la ventana es más de 700px */
-            $('#nav-section').off('click');
+            $('#menu').off('click');
             $(document).off('click');
-            $('.container-bar').css('display', 'grid');  // Establecer display a 'flex'
+            $('.nav--element').css('display', 'grid');  // Establecer display a 'flex'
         }
     }
     
