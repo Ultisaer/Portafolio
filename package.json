@@ -1,0 +1,12 @@
+{
+  "name": "ultisaer-portafolio",
+  "version": "1.0.0",
+  "description": "Ultisaer portafolio",
+  "author": "",
+  "scripts": {
+    "sass": "sass --watch src/scss/main.sass docs/css/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.64.1"
+  }
+}

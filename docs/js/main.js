@@ -26,20 +26,20 @@ $(document).ready(function(){
     const skillGroup = {
         '1': {
             labels: ['HTML', 'CSS', 'JavaScript', 'Sass' , 'TypeScript'],
-            imgData : ['./Assets/IconsType/HTML.svg', './Assets/IconsType/CSS.svg', './Assets/IconsType/JS.svg', './Assets/IconsType/SASS.svg', './Assets/IconsType/CSS.svg'],
-            img : ['./Assets/LogoType/HTML.png','./Assets/LogoType/CSS.png', './Assets/LogoType/JS.png', './Assets/LogoType/JS.png' , './Assets/LogoType/CSS.png'],
+            imgData : ['./assets/IconsType/HTML.svg', './assets/IconsType/CSS.svg', './assets/IconsType/JS.svg', './assets/IconsType/SASS.svg', './assets/IconsType/CSS.svg'],
+            img : ['./assets/LogoType/HTML.png','./assets/LogoType/CSS.png', './assets/LogoType/JS.png', './assets/LogoType/JS.png' , './assets/LogoType/CSS.png'],
             id: "type",
         },        
         '2': {
             labels: ['SQL', 'MariaDB', 'MySQL', 'MongoDB' , 'JavaScript'],
-            imgData : ['./Assets/IconsType/HTML.svg', './Assets/IconsType/CSS.svg', './Assets/IconsType/JS.svg', './Assets/IconsType/SASS.svg', './Assets/IconsType/SASS.svg'],
-            img : ['./Assets/LogoType/HTML.png','./Assets/LogoType/CSS.png', './Assets/LogoType/JS.png', './Assets/LogoType/CSS.png', './Assets/LogoType/JS.png'],
+            imgData : ['./assets/IconsType/HTML.svg', './assets/IconsType/CSS.svg', './assets/IconsType/JS.svg', './assets/IconsType/SASS.svg', './assets/IconsType/SASS.svg'],
+            img : ['./assets/LogoType/HTML.png','./assets/LogoType/CSS.png', './assets/LogoType/JS.png', './assets/LogoType/CSS.png', './assets/LogoType/JS.png'],
             id: "dataBase",
         },
         '3': {
             labels: ['VisualCode', 'GPT-4', 'Notion', 'StabilityIA', 'Terminal'],
-            imgData : ['./Assets/IconsType/HTML.svg', './Assets/IconsType/CSS.svg', './Assets/IconsType/JS.svg', './Assets/IconsType/SASS.svg', './Assets/IconsType/SASS.svg'],
-            img : ['./Assets/LogoType/HTML.png','./Assets/LogoType/CSS.png', './Assets/LogoType/JS.png', './Assets/LogoType/JS.png', './Assets/LogoType/JS.png'],
+            imgData : ['./assets/IconsType/HTML.svg', './assets/IconsType/CSS.svg', './assets/IconsType/JS.svg', './assets/IconsType/SASS.svg', './assets/IconsType/SASS.svg'],
+            img : ['./assets/LogoType/HTML.png','./assets/LogoType/CSS.png', './assets/LogoType/JS.png', './assets/LogoType/JS.png', './assets/LogoType/JS.png'],
             id: "tools",
     }};
     // Creacion de los elementos del proyecto principal en su vista mas grande
