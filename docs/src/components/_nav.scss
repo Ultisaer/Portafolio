@@ -1,0 +1,10 @@
+.nav--element {
+  grid-template-rows: 150px auto 150px;
+}
+.nav__section{
+  @include flex(start , center, column);
+  gap: 20px;
+}
+.nav__icons{
+  @extend .nav__section
+}

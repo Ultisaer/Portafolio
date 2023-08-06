@@ -5,9 +5,9 @@
 @import "./abstracts/funciones";
 
 // Base
-@import "./base/estilos-asociados";
 @import "./base/reset";
 @import "./base/typography";
+@import "./base/estilos-asociados";
 
 // Components (Componentes)
 @import "./components/btn";
@@ -16,6 +16,7 @@
 @import "./components/svg";
 
 // Layout (Diseño)
+@import "./layaut/navBar";
 @import "./layaut/detail";
 @import "./layaut/header";
 @import "./layaut/main";
@@ -34,7 +35,3 @@
 
 // Vendors
 @import "./vendors/media-queries";
-
-html {
-  background-color: rgb(68, 61, 61);
-}

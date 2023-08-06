@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  @media (max-width: 1075px) {
+    grid-template-columns: 1fr 220px;
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
