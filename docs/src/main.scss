@@ -1,0 +1,40 @@
+// Abstracts 
+
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/funciones";
+
+// Base
+@import "./base/estilos-asociados";
+@import "./base/reset";
+@import "./base/typography";
+
+// Components (Componentes)
+@import "./components/btn";
+@import "./components/menu";
+@import "./components/nav";
+@import "./components/svg";
+
+// Layout (Diseño)
+@import "./layaut/detail";
+@import "./layaut/header";
+@import "./layaut/main";
+@import "./layaut/container";
+
+// Pages (Paginas)
+@import "./pages/aboutMe";
+@import "./pages/header";
+@import "./pages/main";
+@import "./pages/proyects";
+@import "./pages/skills";
+@import "./pages/statistic";
+
+// Themes 
+@import "./themes/tema";
+
+// Vendors
+@import "./vendors/media-queries";
+
+html {
+  background-color: rgb(68, 61, 61);
+}

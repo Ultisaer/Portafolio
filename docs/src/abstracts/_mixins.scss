@@ -1,0 +1,72 @@
+// Mixin Dictionary:
+// display-grid: configura elementos como una cuadrícula
+// position-fixed: configura elementos en posición fija
+// flex-center: centra elementos con flexbox
+// size: configura el tamaño de los elementos
+// border: configura los estilos de borde de los elementos
+// hover-styles: configura los estilos de hover de los elementos
+// font-size: configuracion del tamaño condicionado
+
+@mixin display-grid($columns, $rows) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+}
+
+@mixin position-fixed($top: null, $right: null, $bottom: null, $left: null) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin border($width: 2px, $style: solid, $color: $contrast-color) {
+  border: $width $style $color;
+}
+
+@mixin hover-styles($bg-color: $accions-color, $border-color: $contrast-color, $font-weight: 700, $color: $focus-color) {
+  &:hover {
+    background-color: $bg-color;
+    border: 4px solid $border-color;
+    font-weight: $font-weight;
+    color: $color;
+  }
+}
+
+@mixin font-size($size) {
+  color: $title-color;
+
+  @if $size == "lg" {
+    font-size: $font-size--lg;
+  }
+  @else if $size == "md" {
+    font-size: $font-size--md;
+  }
+  @else if $size == "sm" {
+    font-size: $font-size--sm;
+  }
+  @else if $size == "xs" {
+    color: $primary-color;
+    font-size: $font-size--xs;
+  }
+  @else if $size == "sub" {
+    color: $primary-color;
+    font-size: $font-size--sm;
+  }
+  @else if $size == "tl" {
+    color: $contrast-color;
+    font-size: $font-size--lg;
+  }
+}

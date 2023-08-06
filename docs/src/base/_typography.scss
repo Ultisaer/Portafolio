@@ -1,0 +1,36 @@
+/*/ Titulos y subtitulos /*/
+.fontSize--lg {
+  @include font-size('lg');
+}
+
+.fontSize--md {
+  @include font-size('md');
+}
+
+.fontSize--sm {
+  @include font-size('sm');
+}
+
+.fontSize--xs {
+  @include font-size('xs');
+}
+
+.fontSize--sub {
+  @include font-size('sub');
+}
+
+.fontSize--tl {
+  @include font-size("tl");
+  font-family: "Candal", sans-serif;
+}
+
+/*/Estilado de los A /*/
+.nav__section--link
+{
+  @include font-size("sm");
+
+  &:hover{
+    font-weight: 700;
+    color: $contrast-color;
+  }
+}

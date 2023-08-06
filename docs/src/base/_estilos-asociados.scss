@@ -1,0 +1,32 @@
+/*/  Clases para los elementos de accions /*/
+.accionElements
+{
+  @include border;
+  @include font-size("xs");
+
+  border-radius: 10px;
+  background-color: $focus-color;
+  font-family: "Montserrat", sans-serif;
+
+  &:hover {
+    color: $focus-color;
+    background-color: $accions-color;
+    font-weight: 700;
+  }
+}
+
+/*/Llamado a los elementos de accion /*/
+// Botones
+  .skills__accion 
+  {
+    @extend .accionElements;
+  }
+// Elementos a
+  .detail__accion
+  {
+    @extend .accionElements;
+  }
+// svgs
+.accion__svg:hover{
+  fill: $contrast-color;
+}
