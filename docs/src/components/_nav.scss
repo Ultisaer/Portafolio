@@ -1,5 +1,6 @@
 .nav--element {
   grid-template-rows: 150px auto 150px;
+  background-color: $focus-color;
 }
 .nav__section{
   @include flex(start , center, column);

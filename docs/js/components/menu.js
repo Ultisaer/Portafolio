@@ -1,12 +1,23 @@
-// Agrega un controlador de eventos de clic al elemento
 export function handleNavigation() {
   const menuMobile = document.querySelector(".menu--mobile");
+  const navBar = document.querySelector(".nav--element")
+  const mediaQuery = window.matchMedia('(min-width: 700px)');
 
-  // Define la función que quieres ejecutar cuando el elemento sea clicado
-  function handleClick() {
-    alert('Has hecho clic en el menú móvil!');
-  }
+  menuMobile.addEventListener('click', (event) => {
+    event.stopPropagation();
+    navBar.classList.toggle("hidden");
+  });
 
-  // Agrega el controlador de eventos de clic al elemento
-  menuMobile.addEventListener('click', handleClick);
+  document.addEventListener('click', (event) => {
+    if (!navBar.classList.contains("hidden") && !navBar.contains(event.target) && !mediaQuery.matches){
+      navBar.classList.add("hidden");
+    }
+  });
+  
+  mediaQuery.addListener(() => {
+    if (mediaQuery.matches){
+      navBar.classList.remove("hidden");
+    }
+  });
+
 }

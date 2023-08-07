@@ -36,3 +36,8 @@ a {
 h1, h2, h3 {
   font-family: "Candal", sans-serif;
 }
+
+// Creacion de un elemento oculto
+body .hidden{
+  display: none;
+}
