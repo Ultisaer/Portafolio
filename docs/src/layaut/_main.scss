@@ -1,5 +1,5 @@
+// Definir los estilos por defecto y la disposicion de los elementos 
 .main {
-  padding: 60px;
   background-color: $primary-color;
-  overflow-x: hidden;
+  display: grid;
 }

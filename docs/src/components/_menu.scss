@@ -1,10 +1,10 @@
+// Elemento desplegable del menu en mobile vista desde 700px o inferiores
 .menu {
   display: none;
   @media (max-width: 700px){
+      @include position-type(fixed, 30px , 30px);
+      
       display: flex;
-      position: fixed;
-      right: 40px;
-      top: 40px;
       z-index: 1000;
   }
 }

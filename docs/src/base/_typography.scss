@@ -21,7 +21,11 @@
 
 .fontSize--tl {
   @include font-size("tl");
+  
   font-family: "Candal", sans-serif;
+  @media (max-width: 390px) {
+    @include font-size("mb")
+  }
 }
 
 /*/Estilado de los A /*/

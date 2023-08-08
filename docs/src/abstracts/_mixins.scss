@@ -1,20 +1,27 @@
 // Mixin Dictionary:
 // display-grid: configura elementos como una cuadrícula
-// position-fixed: configura elementos en posición fija
+// grid-center: pociciona los elementos en el centro
+// position-type: configura elementos en base a top right...
 // flex-center: centra elementos con flexbox
 // size: configura el tamaño de los elementos
 // border: configura los estilos de borde de los elementos
 // hover-styles: configura los estilos de hover de los elementos
 // font-size: configuracion del tamaño condicionado
 
-@mixin display-grid($columns, $rows) {
+@mixin display-grid($columns, $rows, $grid-auto-flow : row) {
   display: grid;
   grid-template-columns: $columns;
   grid-template-rows: $rows;
+  grid-auto-flow: $grid-auto-flow;
 }
 
-@mixin position-fixed($top: null, $right: null, $bottom: null, $left: null) {
-  position: fixed;
+@mixin grid-center($display: grid, $place-content: center){
+  display: $display;
+  place-content: $place-content;
+}
+
+@mixin position-type($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
   top: $top;
   right: $right;
   bottom: $bottom;
@@ -33,14 +40,15 @@
   height: $height;
 }
 
-@mixin border($width: 2px, $style: solid, $color: $contrast-color) {
+@mixin border($width: 2px, $style: solid, $color: $contrast-color, $border-radius: 10px) {
   border: $width $style $color;
+  border-radius: $border-radius;
 }
 
 @mixin hover-styles($bg-color: $accions-color, $border-color: $contrast-color, $font-weight: 700, $color: $focus-color) {
   &:hover {
     background-color: $bg-color;
-    border: 4px solid $border-color;
+    border: 2px solid $border-color;
     font-weight: $font-weight;
     color: $color;
   }
@@ -69,5 +77,9 @@
   @else if $size == "tl" {
     color: $contrast-color;
     font-size: $font-size--lg;
+  }
+  @else if $size == "mb" {
+    color: $contrast-color;
+    font-size: $font-size--mb;  
   }
 }

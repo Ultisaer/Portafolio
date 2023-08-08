@@ -1,0 +1,69 @@
+// Posicionamiento de los elementos en grilla con espaciado
+.aboutMe {
+  display: grid;
+  gap: 20px;
+  text-align: center;
+  margin: 100px auto;
+  max-width: 550px;
+  place-self: center;
+  padding: 20px;
+
+  @media (min-width: 1200px){
+    max-width: 950px;
+    margin: 100px 60px;
+  }
+}
+
+// Elementos globales posteriormente usados
+.aboutMe--elements {
+  @include grid-center;
+  @include border;
+
+  padding: 20px 30px;
+  background-color: $secondary-color;
+}
+
+// Cambio del color del fondo borde y altura del texto
+.aboutMe__profile {
+  @extend .aboutMe--elements;
+  @include border (4px);
+  
+  background-color: $focus-color;
+
+  .aboutMe__header--h1 {
+    line-height: 44px;
+    @media (max-width: 380px)
+    {
+      font-size: 3.8rem;
+    }
+  }
+}
+
+// Recogida de los valores predefinidos
+.aboutMe__description {
+  @extend .aboutMe--elements;
+}
+
+// Cambio de la disposicion del texto hacia el inicio y inclusion de margenes
+.aboutMe__future {
+  @extend .aboutMe--elements;
+
+  text-align: start;
+  .aboutMe__header--h2 {
+    line-height: 30px;
+    margin-bottom: 50px;
+
+    @media (max-width: 380px)
+    {
+      font-size: 2.4rem;
+    }
+  }
+  
+  .aboutMe__text {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 1200px){
+    grid-area: 1 / 2/ 3/ 3;
+  }
+}

@@ -1,0 +1,60 @@
+// Posicionamiento y espaciado en los elementos del proyecto
+.projects__container{
+  display: grid;
+  gap: 60px;
+  margin: 100px auto;
+}
+
+// Creacion del contenedor principal de los proyextos
+.projects__gallery{
+  @include size (100%, 300px);
+  @include display-grid(30px auto 30px, auto);
+  @include border;
+
+  background-color: $focus-color;
+  padding: 10px;
+  gap: 10px;
+}
+
+// Proyectos con scroll para pasar de 1 a otro
+.projects__elements{
+  @include display-grid(1fr, auto, column);
+  
+  width: 100%;
+  overflow: auto;
+  overflow-y: hidden
+}
+
+// El proyecto en individual con un tamaño predefinido para evitar colapsos
+.projects__scroll {
+  @include border;
+
+  background-color: #717a8d;
+  width: 300px;
+  position: relative;
+}
+
+// Estilado del boton, tamaño centrado border hover y posicion del elemento
+.projects__button {
+  @include size (180px, 50px);
+  @include grid-center;
+  @include border;
+  @include hover-styles;
+  @include position-type(absolute, null , 0 , 0 , null);  
+
+  background-color: $focus-color;
+  margin: 10px;
+  color: $title-color;
+}
+
+// Las imagenes contienen el 100% del contenedor
+.projects__img {
+  @include size(100%, 100%);
+
+  object-fit: cover;
+}
+
+// Contenedor oculto
+.projects__expand{
+  @extend .projects__gallery;
+}

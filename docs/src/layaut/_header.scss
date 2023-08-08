@@ -1,8 +1,7 @@
+// Posicionamiento del elemento fantasma para un buen desarrollo del contenido / espacio ocupado por el fixed""
 .header {
   grid-area: 1 / 2 / 1 / 3;
   @media (max-width: 700px) {
     grid-area: 1 / 1 / 1 / 1;
   }
 }
-
-// @include position-fixed (0 , 0)
