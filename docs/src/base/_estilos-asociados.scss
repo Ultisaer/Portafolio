@@ -25,7 +25,18 @@
   {
     @extend .accionElements;
   }
-// svgs
-.accion__svg:hover{
-  fill: $contrast-color;
-}
+
+  // Animaciones del proyecto
+  .animation {
+    animation: fade-in 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

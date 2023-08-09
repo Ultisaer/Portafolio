@@ -108,10 +108,18 @@ body .hidden {
 }
 
 /*/Llamado a los elementos de accion /*/
-.accion__svg:hover {
-  fill: #e65111;
+.animation {
+  animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .projects {
   background-color: #2C323C;
   padding: 20px;
@@ -128,10 +136,6 @@ body .hidden {
     display: flex;
     z-index: 1000;
   }
-}
-
-.menu__icon:hover {
-  fill: #e65111;
 }
 
 .nav--element {
@@ -271,11 +275,20 @@ body .hidden {
   margin: 100px auto;
 }
 
-.projects__gallery, .projects__expand {
+.projects__slick--container, .detail .detail__project, .projects__elements .projects__scroll {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  background-color: #717a8d;
+  height: 275px;
+  position: relative;
+  margin: 0 10px;
+}
+
+.projects__gallery, .focus {
   width: 100%;
   height: 300px;
   display: grid;
-  grid-template-columns: 30px auto 30px;
+  grid-template-columns: 40px auto 40px;
   grid-template-rows: auto;
   grid-auto-flow: row;
   border: 2px solid #e65111;
@@ -294,15 +307,6 @@ body .hidden {
   overflow: auto;
   overflow-y: hidden;
 }
-
-.projects__scroll {
-  border: 2px solid #e65111;
-  border-radius: 10px;
-  background-color: #717a8d;
-  width: 300px;
-  position: relative;
-}
-
 .projects__button {
   width: 180px;
   height: 50px;
@@ -329,4 +333,69 @@ body .hidden {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.projects__expand {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  gap: 20px;
+}
+@media (min-width: 1400px) {
+  .projects__expand {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+  }
+}
+
+.focus {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+}
+
+.focus__elements {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px 1fr;
+  grid-auto-flow: row;
+}
+
+.detail {
+  width: 100%;
+  overflow: auto;
+  overflow-y: hidden;
+}
+.detail__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.detail__info {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  gap: 10px;
+  margin: 10px;
+}
+
+.detail__link {
+  display: grid;
+  place-content: center;
+  width: 80px;
+  height: 40px;
+  color: #fdd7c6;
+}
+
+.statistic {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  background-color: #13161C;
 }/*# sourceMappingURL=main.css.map */

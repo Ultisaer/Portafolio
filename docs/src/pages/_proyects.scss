@@ -4,11 +4,18 @@
   gap: 60px;
   margin: 100px auto;
 }
-
+.projects__slick--container{
+  @include border;
+  
+  background-color: #717a8d;
+  height: 275px;
+  position: relative;
+  margin: 0 10px;
+}
 // Creacion del contenedor principal de los proyextos
 .projects__gallery{
   @include size (100%, 300px);
-  @include display-grid(30px auto 30px, auto);
+  @include display-grid(40px auto 40px, auto);
   @include border;
 
   background-color: $focus-color;
@@ -22,16 +29,12 @@
   
   width: 100%;
   overflow: auto;
-  overflow-y: hidden
-}
+  overflow-y: hidden;
 
-// El proyecto en individual con un tamaño predefinido para evitar colapsos
-.projects__scroll {
-  @include border;
-
-  background-color: #717a8d;
-  width: 300px;
-  position: relative;
+  // Altura establecida + especificidad para sobreescribir height: 100%  / width establecido por el carrucel
+  .projects__scroll {
+    @extend .projects__slick--container;
+  }
 }
 
 // Estilado del boton, tamaño centrado border hover y posicion del elemento
@@ -54,7 +57,66 @@
   object-fit: cover;
 }
 
-// Contenedor oculto
+// Contenedor oculto 
 .projects__expand{
+  @include display-grid(1fr, auto);
+  gap: 20px;
+
+  @media (min-width: 1400px){
+    @include display-grid(3fr 1fr , auto);
+
+  }
+}
+
+// Contenedor scroll y las estadisticas
+.focus{
+  @include border;
   @extend .projects__gallery;
+}
+
+// Posicionamiento de los botones laterales
+.focus__elements{
+  @include display-grid(auto, 50px 1fr)
+}
+
+// Posicionamiento del elemento central del carrucel
+.detail{
+  width: 100%;
+  overflow: auto;
+  overflow-y: hidden;
+
+  .detail__project{
+    @extend .projects__slick--container;
+  }
+}
+
+// Las img ocupan el 100% de su contenedor pero no se distorcionan
+.detail__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px
+}
+
+// Posicionamiento de los links de cada proyecto
+.detail__info {
+  @include grid-center;
+  @include position-type(absolute, null , 0 , 0 , null);
+
+  gap: 10px;
+  margin: 10px;
+}
+
+// Caracteristicas especiales de los links
+.detail__link{
+  @include grid-center;
+  @include size(80px , 40px);
+
+  color: $title-color;
+}
+
+// Contenedor de las estadisticas
+.statistic{
+  @include border;
+  background-color: $focus-color;
 }
