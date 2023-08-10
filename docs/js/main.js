@@ -8,6 +8,7 @@ import { createElementProject } from "./components/projectsElements.js"
 import { carrouselSlick } from "./components/carrousel.js"
 import { carrouselNested } from "./components/carrouselNested.js";
 import { bottonNestedAccion } from "./components/bottonNested.js";
+import { stadistic } from "./components/stadistic.js"
 
 dataProject();            // Datos de los proyectos
 skillProject();           // Datos de las habilidades adquiridas
@@ -18,3 +19,4 @@ createElementProject();   // Creacion de los elementos del proyecto
 carrouselSlick();
 carrouselNested();
 bottonNestedAccion();
+stadistic();

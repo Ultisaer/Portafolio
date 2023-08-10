@@ -12,4 +12,8 @@ export function carrouselNested() {
   // Inicializamos el segundo carrusel con 1 slide visible, no responsive y con animacion  / creamos los botones
   startSlick(".detail", 1, false, true);
   buttonSlickMove(".focus__move--back", ".focus__move--next", ".detail");
+
+  startSlick(".statistic", 1, false, true)
+  buttonSlickMove(".focus__move--back", ".focus__move--next", ".statistic");
+
 }
