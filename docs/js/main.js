@@ -1,5 +1,3 @@
-import { buildProjectStatistics } from "./components/stadistic/buildProjectStatistics.js"
-
 // Importaciones de datos
 import { dataProject } from "./data/projects.js";
 import { skillProject } from "./data/skills.js";
@@ -14,7 +12,6 @@ import { carrouselNested } from "./components/carousel/carouselFactory.js";
 import { bottonNestedAccion } from "./components/carousel/carouselButtonActions.js";
 import { stadistic } from "./components/stadistic/stadistic.js";
 // Lógica y inicialización
-buildProjectStatistics();
 
 stadistic();              // Esta función puede llamar internamente a createDoughnutChart y createStatisticsProgressBar
 dataProject();            // Datos de los proyectos

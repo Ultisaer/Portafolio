@@ -1,11 +1,17 @@
 // stadistic.js
 import { createDoughnutChart } from "./doughnutChartBuilder.js";
 import { createStatisticsProgressBar } from "./statisticsProgressBar.js";
+import { buildProjectStatistics } from "./buildProjectStatistics.js"
 import { dataProject } from "../../data/projects.js";
 
 
 export function stadistic() {
+  
   const projectData = dataProject();
+  projectData.forEach((project, index) => {
+    buildProjectStatistics(index)
+  });
+
   const stadistic = document.querySelectorAll(".statistic__graphic");
   
   stadistic.forEach((element, index) => {
@@ -23,6 +29,7 @@ export function stadistic() {
     ];
     const colors = projectData.colors || defaultColors;
 
+    console.log('Datos del proyecto en el índice', index, projectData[index]);
 
     for (let tecnologia in projectData[index].estadistic) {
       label.push(tecnologia);
