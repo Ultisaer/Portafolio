@@ -1,0 +1,6 @@
+// Color de fondo de la barra de progreso
+.stadistic__background {
+  @include size(100%, 20px);
+  position: relative;
+  border-radius: 10px;
+}

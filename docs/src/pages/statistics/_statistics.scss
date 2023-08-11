@@ -1,0 +1,25 @@
+// Contenedor de las estadisticas disposicion frente a los tamaños de pantalla
+.statistic{
+  grid-area: 3 / 1 / 4 / 3;
+  border : 10px solid #13161C;
+  padding: 0;
+  border-radius: 10px;
+  background-color: $focus-color;
+  overflow: hidden; ////////ELEMENTO 100% NECESARIO PARA LOS SLICK DEL CARRUCEL
+
+  @media (min-width: 1400px){
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .statistic__project{
+    padding: 30px;
+    @include border;
+
+    @media (min-width: 1400px) {
+      height: 500px;
+    }
+}
+}
+
+// Elemento de los contenedores fanstasma creados en JS para el manejo de las estadisicas
+// Todos los demas elementos

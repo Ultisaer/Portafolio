@@ -1,0 +1,23 @@
+// Posicionamiento del elemento central del carrucel hijo de focus / expand
+.detail{
+  overflow-y: hidden; ////////ELEMENTO 100% NECESARIO PARA LOS SLICK DEL CARRUCEL
+  
+  .detail__project{
+    @include border;
+    position: relative;
+    min-height: 400px;
+    overflow: hidden;
+    @media (min-width: 1400px) {
+      height: 500px;
+    }
+  }
+}
+
+// Posicionamiento de los links de cada proyecto
+.detail__info {
+  @include grid-center;
+  @include position-type(absolute, null , 0 , 0 , null);
+
+  gap: 10px;
+  margin: 10px;
+}

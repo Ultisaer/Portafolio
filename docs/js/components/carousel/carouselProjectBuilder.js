@@ -1,6 +1,6 @@
 
 // Se importa el objeto que contiene las imágenes de los proyectos y nombres
-import { dataProject } from '../data/projects.js';
+import { dataProject } from '../../data/projects.js';
 
 export function createElementProject() {
   const projectData = dataProject(); // Llama a la función para obtener el objeto

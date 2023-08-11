@@ -1,0 +1,15 @@
+// Configuracion de la grilla en las distintas pantallas 700px de las estadisticas
+.statistic__project{
+  @include display-grid(auto 50px, 70px auto );
+  gap: 10px;
+
+  @media (min-width: 600px){
+    grid-template-columns: 150px auto;
+  }
+  @media (min-width: 1000px){
+    grid-template-columns: 300px auto;
+  }
+  @media (min-width: 1400px){
+    grid-template-columns: auto;
+  }
+}

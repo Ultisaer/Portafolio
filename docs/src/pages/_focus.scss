@@ -1,0 +1,14 @@
+// Contenedor carrucel comparte espacio con las estadisticas
+.focus{
+  grid-area: 2 / 1 / 3 / 3;
+  background-color: $focus-color;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  gap: 10px;
+  overflow: hidden; ////////ELEMENTO 100% NECESARIO PARA LOS SLICK DEL CARRUCEL
+  @media (min-width: 1400px){
+    grid-area: 2 / 1/ 3 /2;
+  }
+}
+

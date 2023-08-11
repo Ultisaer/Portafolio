@@ -1,0 +1,66 @@
+
+// Estilado del boton, tamaño centrado border hover y posicion del elemento
+.projects__button {
+  @include size (180px, 50px);
+  @include grid-center;
+  @include border;
+  @include hover-styles;
+  @include position-type(absolute, null , 0 , 0 , null);  
+
+  background-color: $focus-color;
+  margin: 10px;
+  color: $title-color;
+}
+
+// Posicionamiento de los botones estilos generales y especificos
+.projects__move{
+  @media (max-width: 1000px){
+    @include position-type(absolute, 60px , null, 60px , null);
+    width: 50px;
+    z-index: 2;
+  }
+}
+.projects__move--after{
+  right: 20px;
+}
+.projects__move--back{
+  left: 20px;
+}  
+
+// Posicionamiento de los botones laterales responsivos en el Focys
+.focus__elements{
+  @include display-grid(auto, 50px 1fr);
+  @include position-type(absolute, 30px , null , 120px , null);
+  z-index: 2;
+  gap: 40px;
+}
+.focus__move{
+  width: 50px;
+}
+.focus__elements--back{
+  left: 30px;
+}
+.focus__elements--next{
+  right: 30px;
+  @media (max-width: 800px) {
+    display: none;
+  }
+  @media (max-width: 700px) {
+    display: grid;
+  }
+  @media (max-width: 550px) {
+    display: none;
+  }
+}
+.focus__move--back{
+  @media (max-width: 800px) {
+    display: none;
+  }
+  @media (max-width: 700px) {
+    display: grid;
+    place-content: center;
+  }
+  @media (max-width: 550px) {
+    display: none;
+  }
+}

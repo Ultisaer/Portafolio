@@ -40,3 +40,7 @@
     }
   }
   
+// Cambia el comportamiento de bloque a grilla a los elementos de las estadisticas para que sea funcional
+body .slick-initialized .slick-slide {
+  display: grid;
+}

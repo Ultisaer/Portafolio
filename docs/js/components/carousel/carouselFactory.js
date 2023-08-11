@@ -1,5 +1,5 @@
 // Importamos la función carrouselSlick como carrousel desde el archivo carrousel.js
-import { carrouselSlick as carrousel } from "./carrousel.js";
+import { carrouselSlick as carrousel } from "./carouselController.js";
 
 export function carrouselNested() {
   // Obtenemos las funciones startSlick y buttonSlickMove desde carrousel()

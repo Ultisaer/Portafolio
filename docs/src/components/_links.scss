@@ -1,0 +1,7 @@
+// Caracteristicas especiales de los links del contenedor secundario / expand
+.detail__link{
+  @include grid-center;
+  @include size(80px , 40px);
+
+  color: $title-color;
+}

@@ -7,32 +7,51 @@
 // Base
 @import "./base/reset";
 @import "./base/typography";
-@import "./base/estilos-asociados";
 
 // Components (Componentes)
-@import "./components/projects";
 @import "./components/btn";
+@import "./components/images";
+@import "./components/links";
 @import "./components/menu";
 @import "./components/nav";
+@import "./components/projects";
 @import "./components/svg";
 
 // Layout (Diseño)
-@import "./layaut/navBar";
-@import "./layaut/detail";
+@import "./layaut/projects/container";
+@import "./layaut/projects/gallery";
+
+@import "./layaut/statistics/project";
+@import "./layaut/statistics/technology";
+@import "./layaut/statistics/title";
+
+@import "./layaut/aboutMe";
+@import "./layaut/container";
 @import "./layaut/header";
 @import "./layaut/main";
-@import "./layaut/container";
+@import "./layaut/navBar";
 
 // Pages (Paginas)
+@import "./pages/statistics/background";
+@import "./pages/statistics/container";
+@import "./pages/statistics/element";
+@import "./pages/statistics/label";
+@import "./pages/statistics/statistics";
+@import "./pages/statistics/view";
+
 @import "./pages/aboutMe";
+@import "./pages/detail";
+@import "./pages/focus";
 @import "./pages/header";
 @import "./pages/main";
 @import "./pages/proyects";
 @import "./pages/skills";
-@import "./pages/statistic";
 
 // Themes 
 @import "./themes/tema";
+
+// Utilidades
+@import "./utilities/estilos-asociados";
 
 // Vendors
 @import "./vendors/media-queries";

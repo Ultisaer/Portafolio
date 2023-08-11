@@ -1,0 +1,13 @@
+// Ubicacion de los elementos en los espacios de la grilla dependiendo del tamaño de pantalla
+.statistic--title{
+  @include grid-center;
+
+  text-align: center;
+  grid-area: 1 / 1 / 1 / 2;
+  @media (min-width: 600px){
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  @media (min-width: 1400px){
+    grid-area: 1 / 1 / 2 / 2;
+  }
+}

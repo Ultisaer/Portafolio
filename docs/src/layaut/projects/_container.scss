@@ -1,0 +1,12 @@
+// Posicionamiento y espaciado en los elementos del proyecto principal
+.projects__container{
+  @include display-grid(1fr 250px, auto);
+  margin: 100px auto;
+  gap: 30px;
+  @media (min-width: 1400px){
+    @include display-grid(1fr 300px , auto);
+    width: 1200px;
+    padding: 20px;
+
+  }
+}

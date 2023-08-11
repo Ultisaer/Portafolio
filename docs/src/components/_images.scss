@@ -1,0 +1,13 @@
+// Las imagenes contienen el 100% del contenedor principal
+.projects__img {
+  @include size(100%, 100%);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+// Las imagenes contienen el 100% del contenedor principal expand / secundario
+.detail__img{
+  @include size(100%, 100%);
+  border-radius: 10px;
+  object-fit: cover;
+}

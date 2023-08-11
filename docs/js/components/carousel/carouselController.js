@@ -17,7 +17,7 @@ export function carrouselSlick(){
     if (isResponsive === true) {
       slickSettings.responsive = [
         {
-          breakpoint: 800,
+          breakpoint: 1400,
           settings: {
             slidesToShow: 1,        
           }
