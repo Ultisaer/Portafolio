@@ -11,3 +11,21 @@
     width: 300px;
   }
 }
+
+@media (max-height: 600px) {
+  .nav__icons {
+    display: block;
+    margin-top: 50px;
+  }
+  .nav__link{
+    margin-right: 20px
+  }
+}
+@media (max-height: 545px) {
+  .nav__perfil{
+    display: none;
+  }
+  .nav--element{
+    grid-template-rows: 1fr;
+  }
+}

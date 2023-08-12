@@ -12,18 +12,21 @@ import { carrouselNested } from "./components/carousel/carouselFactory.js";
 import { bottonNestedAccion } from "./components/carousel/carouselButtonActions.js";
 import { stadistic } from "./components/stadistic/stadistic.js";
 import { skills } from "./components/skills/skills.js"
+import { animation} from "./components/animation.js";
 // Lógica y inicialización
 
 stadistic();              // Esta función puede llamar internamente a createDoughnutChart y createStatisticsProgressBar
 
 dataProject();            // Datos de los proyectos
 skillProject();           // Datos de las habilidades adquiridas
-skills();
+
 
 dataSvg();
 svgContainer();
 handleMenu();             // Configura el controlador de eventos de clic para el menú móvil
 createElementProject();   // Creación de los elementos del proyecto
+skills();
 carrouselSlick();
 carrouselNested();
 bottonNestedAccion();
+animation(); // Manejo de las animaciones

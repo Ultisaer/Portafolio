@@ -2,13 +2,13 @@
 
 @import "./abstracts/variables";
 @import "./abstracts/mixins";
-@import "./abstracts/funciones";
 
 // Base
 @import "./base/reset";
 @import "./base/typography";
 
 // Components (Componentes)
+@import "./components/animation";
 @import "./components/btn";
 @import "./components/images";
 @import "./components/links";
@@ -19,6 +19,12 @@
 
 // Layout (Diseño)
 @import "./layaut/projects/gallery";
+
+@import "./layaut/skills/buttons";
+@import "./layaut/skills/carousel";
+@import "./layaut/skills/contain";
+@import "./layaut/skills/section";
+@import "./layaut/skills/title";
 
 @import "./layaut/statistics/project";
 @import "./layaut/statistics/technology";
@@ -31,6 +37,11 @@
 @import "./layaut/navBar";
 
 // Pages (Paginas)
+@import "./pages/skills/buttons";
+@import "./pages/skills/data";
+@import "./pages/skills/detail";
+@import "./pages/skills/img";
+
 @import "./pages/statistics/background";
 @import "./pages/statistics/container";
 @import "./pages/statistics/element";
@@ -41,16 +52,10 @@
 @import "./pages/aboutMe";
 @import "./pages/detail";
 @import "./pages/focus";
-@import "./pages/header";
-@import "./pages/main";
 @import "./pages/proyects";
-@import "./pages/skills";
 
 // Themes 
 @import "./themes/tema";
 
-// Utilidades
-@import "./utilities/estilos-asociados";
-
 // Vendors
-@import "./vendors/media-queries";
+@import "./vendors/estilos-asociados";

@@ -1,10 +1,10 @@
 export function carrouselSlick(){
 
   // Valores por defecto de todos los carruceles
-  function startSlick(classSlick, slides = 1, isResponsive = false, fade = false, autoplay = false){
+  function startSlick(classSlick, slides = 1, responsiveSize, responsiveSlide, fade = false, autoplay = false){
     let slickSettings  = {
       infinite: true,
-      speed: 600,
+      speed: 300,
       slidesToShow: slides,
       slidesToScroll: 1,
       arrows: false,
@@ -14,12 +14,12 @@ export function carrouselSlick(){
     }
 
     // Condicional para agregar este codigo al slick si es true
-    if (isResponsive === true) {
+    if (responsiveSize != 0) {
       slickSettings.responsive = [
         {
-          breakpoint: 1400,
+          breakpoint: responsiveSize,
           settings: {
-            slidesToShow: 1,        
+            slidesToShow: responsiveSlide,        
           }
         },
       ]

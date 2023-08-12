@@ -1,0 +1,10 @@
+// Disposicion de los elementos en el contenedor
+.skills__section{
+  padding: 10px;
+  background-color: $focus-color;
+  border-radius: 10px;
+
+  @media (max-width: 1400px){
+    grid-area: 2 / 1 / 3 / 3;
+    }
+}

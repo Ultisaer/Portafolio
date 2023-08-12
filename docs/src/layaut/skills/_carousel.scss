@@ -1,0 +1,11 @@
+// Disposicion de los elemenentos del carrucel
+.skills__JS{
+  @include grid-center;
+
+  @media (max-width: 1000px){
+    grid-area: 1 / 1 / 2 / 4;
+  }
+  .skills__elements{
+    overflow: auto;
+  }
+}

@@ -22,15 +22,15 @@
       </div>
       <div class="nav__section">
         <a class="nav__section--link" href="#">SOBRE MI</a>
-        <a class="nav__section--link" href="#">PROYECTOS</a>
-        <a class="nav__section--link" href="#">HABILIDADES</a>
-        <a class="nav__section--link nav__section--animation">CONTACTO</a>
+        <a class="nav__section--link" href="#projects">PROYECTOS</a>
+        <a class="nav__section--link" href="#skills">HABILIDADES</a>
+        <a class="nav__section--link nav__section--animation ">CONTACTO</a>
       </div>
       <div class="nav__icons">
-        <a class="nav__link" href="">
+        <a class="nav__link" href="https://www.linkedin.com/in/jhonatan-david-castillo-castillo-85a21a27b/">
           <img class="nav__icon" src="./assets/IconsNetwork/Linkedin.svg" alt="Red social Linkedin">
         </a>
-        <a href="nav__link">
+        <a class="nav__link" href="https://github.com/Ultisaer">
           <img class="nav__icon" src="./assets/IconsNetwork/Github.svg" alt="Red social Github">
         </a>
       </div>
@@ -52,14 +52,14 @@
         <p  class="aboutMe__text fontSize--xs">He participado en eventos de importancia global como la PlatziCONF México y PlatziCONF Bogotá</p>
       </div>
     </section>
-    <section class="projects">
+    <section id="projects" class="projects">
       <div class="projects__container">
         <div class="projects__title fontSize--tl">PROYECTOS</div>
         <div class="projects__gallery">
           <button class="projects__move projects__move--back" aria-label="Volver">
             <img src="./assets/IconsNavigation/arrowLeft.svg" alt="">                      
           </button>
-          <section class="projects__elements animation">
+          <section class="projects__elements animationFadeIn">
           <!-- Creacion de los elementos del proyecto/carrucel con JS en componentes / proyectsElements  -->
           </section>
           <button class="projects__move projects__move--after" aria-label="Avanzar">
@@ -67,8 +67,7 @@
           </button>
         </div>
 
-        
-          <div class="focus hidden animation">
+          <div class="focus hidden animationFadeIn">
             <div class="focus__elements focus__elements--back">
               <button class="focus__move focus__move--return" >
                 <img src="./assets/IconsNavigation/return.svg" alt="">                               
@@ -91,7 +90,7 @@
               </button>
             </div>
           </div>
-              <div class="statistic hidden animation" >
+              <div class="statistic hidden animationFadeIn" >
               
                 <!-- Creacion de los elementos de las estadisticas con JS en componentes / stadistic / buildProjectEstadistic
                 Su subelemento creado con JS misma ruta/stadisticsProgresBar
@@ -101,7 +100,7 @@
         </div>
       </div>
     </section>
-    <section class="skills">
+    <section id ="skills" class="skills">
       <div class="skills__container">
         <div class="skills__title fontSize--tl">HABILIDADES</div>
         <div class="skills__section">
@@ -111,11 +110,8 @@
               <img src="./assets/IconsNavigation/arrowLeft.svg" alt="">
             </button>
             <div class="skills__JS">
-              <!-- Creacion de los elementos de las estadisticas con JS en componentes / stadistic / buildProjectEstadistic
-                Su subelemento creado con JS misma ruta/stadisticsProgresBar
-                -->
+              <!-- Creacion de los elementos de las estadisticas con JS en componentes / stadistic / buildProjectEstadistic -->
             </div>
-
             <button class="skills__move skills__move--next" aria-label="Habilidad siguiente">
               <img src="./assets/IconsNavigation/arrowRight.svg" alt="">
             </button>
@@ -126,33 +122,9 @@
             </div>                                   
           </section>
         </div>
-        <div class="skills__detail skills__detail--type">
-          <div class="skills__data">
-          <h3 class="skills__header fontSize--sub">Dominio técnico</h3>
-            <div class="skills__data--container">
-              <img class="skills__icons" src="./assets/IconsType/HTML.svg" alt="">
-              <p class="skills__text fontSize--xs">HTML</p>
-            </div>
-            <div class="skills__data--container">
-              <img class="skills__icons" src="./assets/IconsType/CSS.svg" alt="">
-              <p class="skills__text fontSize--xs">CSS</p>
-            </div>
-            <div class="skills__data--container">
-              <img class="skills__icons" src="./assets/IconsType/JS.svg" alt="">
-              <p class="skills__text fontSize--xs">JS</p>
-            </div>
-            <div class="skills__data--container">
-              <img class="skills__icons" src="./assets/IconsType/SASS.svg" alt="">
-              <p class="skills__text fontSize--xs">SASS</p>
-            </div>
-          </div>
-        </div>
-        <div class="skills__detail skills__detail--data hidden">
-          <h3 class="skills__header fontSize--sub">Base de Datos</h3>
-        </div>
-        <div class="skills__detail skills__detail--tool hidden">
-          <h3 class="skills__header fontSize--sub">Herramientas</h3>
-        </div>
+        <div class="skills__detail skills__detail--type"></div>
+        <div class="skills__detail skills__detail--data hidden"></div>
+        <div class="skills__detail skills__detail--tool hidden"></div>
       </div>
     </section>
   </main>

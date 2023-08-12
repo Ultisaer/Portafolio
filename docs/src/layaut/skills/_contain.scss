@@ -1,0 +1,13 @@
+// Estilado del contenedor principal del carrucel y botones
+.skills__section--container{
+  @include border;
+  @include display-grid(40px auto 40px, auto minmax(auto, 40px));
+  @include size(100%, auto);
+
+  grid-area: 2 / 1 / 3 / 2;
+  position: relative;
+  min-height: 400px;
+  background-color: $focus-color;
+  padding: 30px;
+  gap: 10px;
+}

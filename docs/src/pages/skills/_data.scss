@@ -1,0 +1,22 @@
+// Contenedor del contenido del contenedor secundario, disposicion
+.skills__data{
+  @include border;
+  @include display-grid(1fr 1fr, auto);
+
+  padding: 30px;
+  height: 100%;
+  @media (min-width: 1400px){
+    display: block;
+  }
+  @media (max-width: 400px){
+    display: block;
+  }
+}
+
+// Disposicion de sus elemenentos internos
+.skills__data--container{
+  @include display-grid(1fr 5fr, auto);
+
+  align-items: center;
+  gap: 10px;
+}

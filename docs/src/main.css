@@ -31,10 +31,6 @@ a {
   outline: inherit;
 }
 
-h1, h2, h3 {
-  font-family: "Candal", sans-serif;
-}
-
 .hidden {
   display: none !important;
 }
@@ -91,6 +87,61 @@ h1, h2, h3 {
   color: #e65111;
 }
 
+.animationBounce {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: bounce;
+}
+
+@keyframes bounce {
+  from {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  53% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  80% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  40% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(30px, 0, 0);
+  }
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(30px, 0, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(15px, 0, 0);
+  }
+  90% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.animationFadeIn {
+  animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .projects__button {
   width: 180px;
   height: 50px;
@@ -294,6 +345,66 @@ h1, h2, h3 {
   }
 }
 
+@media (max-width: 1000px) {
+  .skills__move {
+    display: none;
+  }
+}
+
+.skills__move--back {
+  grid-area: 1/1/3/2;
+}
+
+.skills__move--next {
+  grid-area: 1/3/3/4;
+}
+
+.skills__JS {
+  display: grid;
+  place-content: center;
+}
+@media (max-width: 1000px) {
+  .skills__JS {
+    grid-area: 1/1/2/4;
+  }
+}
+.skills__JS .skills__elements {
+  overflow: auto;
+}
+
+.skills__section--container {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  grid-template-rows: auto minmax(auto, 40px);
+  grid-auto-flow: row;
+  width: 100%;
+  height: auto;
+  grid-area: 2/1/3/2;
+  position: relative;
+  min-height: 400px;
+  background-color: #13161C;
+  padding: 30px;
+  gap: 10px;
+}
+
+.skills__section {
+  padding: 10px;
+  background-color: #13161C;
+  border-radius: 10px;
+}
+@media (max-width: 1400px) {
+  .skills__section {
+    grid-area: 2/1/3/3;
+  }
+}
+
+.skills__title {
+  grid-area: 1/1/2/3;
+  margin-bottom: 60px;
+}
+
 .statistic__project {
   display: grid;
   grid-template-columns: auto 50px;
@@ -428,6 +539,128 @@ h1, h2, h3 {
     padding: 70px 45px;
     width: 300px;
   }
+}
+
+@media (max-height: 600px) {
+  .nav__icons {
+    display: block;
+    margin-top: 50px;
+  }
+  .nav__link {
+    margin-right: 20px;
+  }
+}
+@media (max-height: 545px) {
+  .nav__perfil {
+    display: none;
+  }
+  .nav--element {
+    grid-template-rows: 1fr;
+  }
+}
+.skills__button {
+  grid-area: 2/1/3/4;
+  display: flex;
+  place-content: center;
+  gap: 20px;
+  height: 40px;
+}
+@media (max-width: 880px) {
+  .skills__button {
+    gap: 10px;
+    height: 50px;
+  }
+}
+@media (max-width: 720px) {
+  .skills__button {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 40px 40px;
+    grid-auto-flow: row;
+    height: 88px;
+    gap: 8px;
+  }
+}
+
+.skills__accion {
+  width: 160px;
+  height: 100%;
+}
+@media (max-width: 915px) {
+  .skills__accion {
+    width: 100%;
+  }
+}
+@media (max-width: 720px) {
+  .skills__accion {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .skills__accion--data {
+    grid-area: 1/2/3/3;
+  }
+}
+
+.skills__data {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  padding: 30px;
+  height: 100%;
+}
+@media (min-width: 1400px) {
+  .skills__data {
+    display: block;
+  }
+}
+@media (max-width: 400px) {
+  .skills__data {
+    display: block;
+  }
+}
+
+.skills__data--container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills__detail {
+  background-color: #13161C;
+  padding: 10px;
+  border-radius: 10px;
+}
+@media (max-width: 1400px) {
+  .skills__detail {
+    grid-area: 3/1/4/3;
+  }
+}
+
+.skills__header {
+  margin-bottom: 30px;
+  text-align: center;
+  grid-area: 1/1/2/3;
+}
+@media (min-width: 1400px) {
+  .skills__header {
+    margin-bottom: 60px;
+  }
+}
+
+.skills__img {
+  border: 2px solid #e65111;
+  border-radius: 10px;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 10px;
 }
 
 .stadistic__background {
@@ -611,169 +844,13 @@ h1, h2, h3 {
   }
 }
 
-.skills__container {
-  background-color: #FFFFFF;
+h1, h2, h3 {
+  font-family: "Candal", sans-serif;
 }
 
-.skills__title {
-  grid-area: 1/1/2/3;
-  margin-bottom: 60px;
-}
-
-.skills__section {
-  padding: 10px;
-  background-color: #13161C;
-  border-radius: 10px;
-}
-@media (max-width: 1400px) {
-  .skills__section {
-    grid-area: 2/1/3/3;
-  }
-}
-
-.skills__JS {
-  display: grid;
-  place-content: center;
-}
-
-.skills__elements {
-  overflow: auto;
-}
-
-.skills__section--container {
-  border: 2px solid #e65111;
-  border-radius: 10px;
-  grid-area: 2/1/3/2;
-  display: grid;
-  grid-template-columns: 40px auto 40px;
-  grid-template-rows: auto minmax(auto, 40px);
-  width: 100%;
-  height: auto;
-  position: relative;
-  min-height: 400px;
-  background-color: #13161C;
-  padding: 30px;
-  gap: 10px;
-}
-
-.skills__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 200px;
-  height: 200px;
-  border: 2px solid #e65111;
-  border-radius: 10px;
-  border-radius: 50%;
-  padding: 10px;
-  margin: 0 10px;
-}
-
-.skills__button {
-  grid-area: 2/1/3/4;
-  display: flex;
-  place-content: center;
-  gap: 20px;
-  height: 40px;
-}
-@media (max-width: 880px) {
-  .skills__button {
-    gap: 10px;
-    height: 50px;
-  }
-}
-@media (max-width: 720px) {
-  .skills__button {
-    display: grid;
-    height: 88px;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 40px 40px;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 720px) {
-  .skills__accion--data {
-    grid-area: 1/2/3/3;
-  }
-}
-
-.skills__accion {
-  height: 100%;
-  width: 160px;
-}
-@media (max-width: 915px) {
-  .skills__accion {
-    width: 100%;
-  }
-}
-@media (max-width: 720px) {
-  .skills__accion {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1400px) {
-  .skills__detail {
-    grid-area: 3/1/4/3;
-  }
-}
-
-.skills__move--back {
-  grid-area: 1/1/3/2;
-}
-
-.skills__move--next {
-  grid-area: 1/3/3/4;
-}
-
-@media (max-width: 1000px) {
-  .skills__move {
-    display: none;
-  }
-}
-
-@media (max-width: 1000px) {
-  .skills__elements {
-    grid-area: 1/1/2/4;
-  }
-}
-
-.skills__detail {
-  background-color: #13161C;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.skills__header {
-  margin-bottom: 30px;
-  text-align: center;
-  grid-area: 1/1/2/3;
-}
-@media (min-width: 1400px) {
-  .skills__header {
-    margin-bottom: 60px;
-  }
-}
-
-.skills__data--container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 5fr;
-  gap: 10px;
-}
-
-.skills__data {
-  border: 2px solid #e65111;
-  border-radius: 10px;
-  padding: 30px;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-@media (min-width: 1400px) {
-  .skills__data {
-    display: block;
-  }
+/*/  Clases para los elementos de accions /*/
+.accionElements, .detail__accion, .skills__accion {
+  font-family: "Montserrat", sans-serif;
 }
 
 /*/  Clases para los elementos de accions /*/
@@ -784,7 +861,6 @@ h1, h2, h3 {
   color: #FFFFFF;
   font-size: 1.6rem;
   background-color: #13161C;
-  font-family: "Montserrat", sans-serif;
 }
 .accionElements:hover, .detail__accion:hover, .skills__accion:hover {
   color: #13161C;
@@ -793,18 +869,6 @@ h1, h2, h3 {
 }
 
 /*/Llamado a los elementos de accion /*/
-.animation {
-  animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 body .slick-initialized .slick-slide {
   display: grid;
 }/*# sourceMappingURL=main.css.map */

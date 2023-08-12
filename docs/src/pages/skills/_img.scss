@@ -1,0 +1,7 @@
+// Estilos de las imagenes
+.skills__img{
+  @include border;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 10px;
+}

@@ -1,6 +1,4 @@
 export function skillProjectElement(name, sources, index){
-  console.log(name)
-  console.log(sources)
   const skillContainer = document.querySelector(".skills__JS")
 
   const skillElement = document.createElement("div")

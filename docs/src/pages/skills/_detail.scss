@@ -1,0 +1,18 @@
+// Contenedor secundario del detalle de productos disposicion
+.skills__detail{
+  background-color: $focus-color;
+  padding: 10px;
+  border-radius: 10px;
+  @media (max-width: 1400px){
+    grid-area: 3 / 1 / 4 / 3;
+  }
+}
+// Titulo del contenedor secundario
+.skills__header{
+  margin-bottom: 30px;
+  text-align: center;
+  grid-area: 1 / 1 / 2 / 3;
+  @media (min-width: 1400px){
+    margin-bottom: 60px;
+  }
+}

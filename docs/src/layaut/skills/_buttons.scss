@@ -1,0 +1,12 @@
+// Botones de desplazamiento del carrucel
+.skills__move{
+  @media (max-width: 1000px){
+    display: none;
+  }
+}
+.skills__move--back{
+  grid-area: 1 / 1 / 3 / 2;
+}
+.skills__move--next{
+  grid-area: 1 / 3 / 3 / 4;
+}
