@@ -16,4 +16,6 @@ export function carrouselNested() {
   startSlick(".statistic", 1, false, true)
   buttonSlickMove(".focus__move--back", ".focus__move--next", ".statistic");
 
+  startSlick(".skills__elements", 3 , false)
+  buttonSlickMove(".skills__move--back" , ".skills__move--next" , ".skills__elements")
 }

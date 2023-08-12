@@ -104,29 +104,53 @@
     <section class="skills">
       <div class="skills__container">
         <div class="skills__title fontSize--tl">HABILIDADES</div>
-        <section class="skills__section">
-          <button class="skills__move skills__move--back" aria-label="Habilidad anterior">
-            <img src="./assets/IconsNavigation/arrowLeft.svg" alt="">
-          </button>
-          <div class="skills__elements skills__elements--type active"></div>
-          <div class="skills__elements skills__elements--data "></div>
-          <div class="skills__elements skills__elements--tool "></div>
-          <button class="skills__move skills__move--next" aria-label="Habilidad siguiente">
-            <img src="./assets/IconsNavigation/arrowRight.svg" alt="">
-          </button>
-          <div class="skills__section">
-            <button class="skills__list skills__accion active" data-target="type">TECNOLOGIAS</button>
-            <button class="skills__list skills__accion " data-target="data">BASE DE DATOS</button>
-            <button class="skills__list skills__accion " data-target="tool">HERRAMIENTAS</button>
-          </div>                                   
-        </section>
-        <div class="skills__detail skills__detail--type active">
-          <h3 class="skills__header fontSize--sub">Dominio técnico</h3>
+        <div class="skills__section">
+          <section class="skills__section--container">
+            
+            <button class="skills__move skills__move--back" aria-label="Habilidad anterior">
+              <img src="./assets/IconsNavigation/arrowLeft.svg" alt="">
+            </button>
+            <div class="skills__JS">
+              <!-- Creacion de los elementos de las estadisticas con JS en componentes / stadistic / buildProjectEstadistic
+                Su subelemento creado con JS misma ruta/stadisticsProgresBar
+                -->
+            </div>
+
+            <button class="skills__move skills__move--next" aria-label="Habilidad siguiente">
+              <img src="./assets/IconsNavigation/arrowRight.svg" alt="">
+            </button>
+            <div class="skills__button">
+              <button class="skills__accion skills__accion--type  " data-target="type">TECNOLOGIAS</button>
+              <button class="skills__accion skills__accion--data " data-target="data">BASE DE DATOS</button>
+              <button class="skills__accion skills__accion--tool " data-target="tool">HERRAMIENTAS</button>
+            </div>                                   
+          </section>
         </div>
-        <div class="skills__detail skills__detail--data">
+        <div class="skills__detail skills__detail--type">
+          <div class="skills__data">
+          <h3 class="skills__header fontSize--sub">Dominio técnico</h3>
+            <div class="skills__data--container">
+              <img class="skills__icons" src="./assets/IconsType/HTML.svg" alt="">
+              <p class="skills__text fontSize--xs">HTML</p>
+            </div>
+            <div class="skills__data--container">
+              <img class="skills__icons" src="./assets/IconsType/CSS.svg" alt="">
+              <p class="skills__text fontSize--xs">CSS</p>
+            </div>
+            <div class="skills__data--container">
+              <img class="skills__icons" src="./assets/IconsType/JS.svg" alt="">
+              <p class="skills__text fontSize--xs">JS</p>
+            </div>
+            <div class="skills__data--container">
+              <img class="skills__icons" src="./assets/IconsType/SASS.svg" alt="">
+              <p class="skills__text fontSize--xs">SASS</p>
+            </div>
+          </div>
+        </div>
+        <div class="skills__detail skills__detail--data hidden">
           <h3 class="skills__header fontSize--sub">Base de Datos</h3>
         </div>
-        <div class="skills__detail skills__detail--tool">
+        <div class="skills__detail skills__detail--tool hidden">
           <h3 class="skills__header fontSize--sub">Herramientas</h3>
         </div>
       </div>

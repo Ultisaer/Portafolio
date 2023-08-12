@@ -29,8 +29,6 @@ export function stadistic() {
     ];
     const colors = projectData.colors || defaultColors;
 
-    console.log('Datos del proyecto en el índice', index, projectData[index]);
-
     for (let tecnologia in projectData[index].estadistic) {
       label.push(tecnologia);
       data.push(projectData[index].estadistic[tecnologia]);

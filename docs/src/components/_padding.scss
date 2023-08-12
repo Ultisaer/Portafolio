@@ -12,3 +12,7 @@
     padding: 60px;
   }
 }
+.skills {
+  @extend .projects;
+  background-color: $primary-color;
+}
