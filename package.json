@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Ultisaer portafolio",
   "author": "",
+  "private": true,
+  "keywords": [
+    "ultisaer",
+    "frontend",
+    "portafolio"
+  ],
   "scripts": {
-    "sass": "sass --watch docs/scss/main.sass docs/scss/main.css"
+    "sass": "sass --watch docs/src/main.scss docs/src/main.css"
   },
   "devDependencies": {
     "sass": "^1.64.2"

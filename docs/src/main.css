@@ -241,16 +241,14 @@ a {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .detail__img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .detail__link {
@@ -871,4 +869,6 @@ h1, h2, h3 {
 /*/Llamado a los elementos de accion /*/
 body .slick-initialized .slick-slide {
   display: grid;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
