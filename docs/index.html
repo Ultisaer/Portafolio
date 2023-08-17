@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google font -->
+  <link rel="preload" href="https://fonts.googleapis.com">
+  <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Dependencias -->
+  <!-- Jquery https://jquery.com/ -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
+  <!-- Chart.js https://www.chartjs.org/ -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js" defer></script>
+  <!-- Slick https://kenwheeler.github.io/slick/ -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <!-- Código principal -->
+  
+  <!--? ya no es necesario cargar el css aquí -->
+
+  <title>Portafolio V2</title>
+  <script type="module" crossorigin src="/Portafolio/assets/index-4d443adf.js"></script>
+  <link rel="stylesheet" href="/Portafolio/assets/index-e0a2cdd9.css">
+</head>
+<body class="container">
+  <header class="header">
+    <button class="menu menu--mobile ">
+      <img src="/Portafolio/assets/menu-fd74be7b.svg" alt="">          
+    </button>
+    <nav class="nav nav--element">
+      <div class="nav__perfil">
+        <img class="nav__perfil-img" src="/Portafolio/assets/Perfil-3a441e14.svg" alt="Imagen de referencia">
+      </div>
+      <div class="nav__section">
+        <a class="nav__section--link" href="#">SOBRE MI</a>
+        <a class="nav__section--link" href="#projects">PROYECTOS</a>
+        <a class="nav__section--link" href="#skills">HABILIDADES</a>
+        <a class="nav__section--link nav__section--animation ">CONTACTO</a>
+      </div>
+      <div class="nav__icons">
+        <a class="nav__link" href="https://www.linkedin.com/in/jhonatan-david-castillo-castillo-85a21a27b/">
+          <img class="nav__icon" src="/Portafolio/assets/Linkedin-9d464c87.svg" alt="Red social Linkedin">
+        </a>
+        <a class="nav__link" href="https://github.com/Ultisaer">
+          <img class="nav__icon" src="/Portafolio/assets/Github-b8356241.svg" alt="Red social Github">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="aboutMe" >
+      <div class="aboutMe__profile">
+        <h1 class="aboutMe__header aboutMe__header--h1 fontSize--lg">JHONATAN</h1>
+        <h3 class="aboutMe__header fontSize--sm">DAVID CASTILLO CASTILLO</h3>
+      </div>
+      <div class="aboutMe__description">
+        <p class="aboutMe__text fontSize--xs">Soy un apasionado por el desarrollo frontend y la tecnología, siempre a la vanguardia para mantenerme relevante en un mundo tan disruptivo, donde los que se adapten al cambio son los que sobreviven.</p>
+      </div>
+      <div class="aboutMe__future">
+        <h2 class="aboutMe__header aboutMe__header--h2 fontSize--md">DESARROLLADOR WEB FRONTEND</h2>
+        <p  class="aboutMe__text fontSize--xs">Mi formación en Frontend se ve reforzada (UX) gracias a una beca de Google. Además, he estado a la vanguardia de las innovaciones tecnológicas, enfocándome en la creación de imágenes utilizando DALLE-2, Stability Diffusion y Midjourney.</p>
+        <p  class="aboutMe__text fontSize--xs">He participado en eventos de importancia global como la PlatziCONF México y PlatziCONF Bogotá</p>
+      </div>
+    </section>
+    <section id="projects" class="projects">
+      <div class="projects__container">
+        <div class="projects__title fontSize--tl">PROYECTOS</div>
+        <div class="projects__gallery">
+          <button class="projects__move projects__move--back" aria-label="Volver">
+            <img src="/Portafolio/assets/arrowLeft-3b31057b.svg" alt="">                      
+          </button>
+          <section class="projects__elements animationFadeIn">
+          <!-- Creacion de los elementos del proyecto/carrucel con JS en componentes / proyectsElements  -->
+          </section>
+          <button class="projects__move projects__move--after" aria-label="Avanzar">
+            <img src="/Portafolio/assets/arrowRight-dca927ce.svg" alt="">
+          </button>
+        </div>
+
+          <div class="focus hidden animationFadeIn">
+            <div class="focus__elements focus__elements--back">
+              <button class="focus__move focus__move--return" >
+                <img src="/Portafolio/assets/return-2beedfd7.svg" alt="">                               
+              </button>
+              <button class="focus__move focus__move--back" >
+                <img src="/Portafolio/assets/arrowLeft-3b31057b.svg" alt="">
+              </button>
+            </div>
+            <section class="detail" >
+              
+          <!-- Creacion de los elementos del proyecto/carrucel con JS en componentes / proyectsElements  -->
+
+            </section>
+            <div class="focus__elements focus__elements--next">
+              <button class="focus__move focus__move--expand " >
+                <img src="/Portafolio/assets/expand-d295a9fc.svg" alt="projects expand" class="hidden">                          
+              </button>
+              <button class="focus__move focus__move--next">
+                <img src="/Portafolio/assets/arrowRight-dca927ce.svg" alt="">
+              </button>
+            </div>
+          </div>
+              <div class="statistic hidden animationFadeIn" >
+              
+                <!-- Creacion de los elementos de las estadisticas con JS en componentes / stadistic / buildProjectEstadistic
+                Su subelemento creado con JS misma ruta/stadisticsProgresBar
+                -->
+
+            </div>
+        </div>
+      <!-- Div por demás -->
+      <!-- </div> -->
+    </section>
+    <section id ="skills" class="skills">
+      <div class="skills__container">
+        <div class="skills__title fontSize--tl">HABILIDADES</div>
+        <div class="skills__section">
+          <section class="skills__section--container">
+            
+            <button class="skills__move skills__move--back" aria-label="Habilidad anterior">
+              <img src="/Portafolio/assets/arrowLeft-3b31057b.svg" alt="">
+            </button>
+            <div class="skills__JS">
+              <!-- Creacion de los elementos de las estadisticas con JS en componentes / stadistic / buildProjectEstadistic -->
+            </div>
+            <button class="skills__move skills__move--next" aria-label="Habilidad siguiente">
+              <img src="/Portafolio/assets/arrowRight-dca927ce.svg" alt="">
+            </button>
+            <div class="skills__button">
+              <button class="skills__accion skills__accion--type  " data-target="type">TECNOLOGIAS</button>
+              <button class="skills__accion skills__accion--data " data-target="data">BASE DE DATOS</button>
+              <button class="skills__accion skills__accion--tool " data-target="tool">HERRAMIENTAS</button>
+            </div>                                   
+          </section>
+        </div>
+        <div class="skills__detail skills__detail--type"></div>
+        <div class="skills__detail skills__detail--data hidden"></div>
+        <div class="skills__detail skills__detail--tool hidden"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
