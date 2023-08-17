@@ -3,11 +3,7 @@
   "image": "jhordyess/node",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint",
-        "ritwickdey.LiveServer"
-      ],
+      "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh"
       }

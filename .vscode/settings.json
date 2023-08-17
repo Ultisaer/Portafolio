@@ -1,4 +1,4 @@
-{
+{   //FIXME con el nuevo paquete npm ya no es necesario usar liveServer
     "liveServer.settings.port": 5501,
     "liveServer.settings.root": "/docs",
 }
