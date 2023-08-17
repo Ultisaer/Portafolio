@@ -18,21 +18,19 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
   <!-- Código principal -->
-  
+  <script type="module" src="./main.js" defer></script>
   <!--? ya no es necesario cargar el css aquí -->
 
   <title>Portafolio V2</title>
-  <script type="module" crossorigin src="/Portafolio/assets/index-4d443adf.js"></script>
-  <link rel="stylesheet" href="/Portafolio/assets/index-e0a2cdd9.css">
 </head>
 <body class="container">
   <header class="header">
     <button class="menu menu--mobile ">
-      <img src="/Portafolio/assets/menu-fd74be7b.svg" alt="">          
+      <img src="./assets/IconsNavigation/menu.svg" alt="">          
     </button>
     <nav class="nav nav--element">
       <div class="nav__perfil">
-        <img class="nav__perfil-img" src="/Portafolio/assets/Perfil-3a441e14.svg" alt="Imagen de referencia">
+        <img class="nav__perfil-img" src="./assets/Perfil.svg" alt="Imagen de referencia">
       </div>
       <div class="nav__section">
         <a class="nav__section--link" href="#">SOBRE MI</a>
@@ -42,10 +40,10 @@
       </div>
       <div class="nav__icons">
         <a class="nav__link" href="https://www.linkedin.com/in/jhonatan-david-castillo-castillo-85a21a27b/">
-          <img class="nav__icon" src="/Portafolio/assets/Linkedin-9d464c87.svg" alt="Red social Linkedin">
+          <img class="nav__icon" src="./assets/IconsNetwork/Linkedin.svg" alt="Red social Linkedin">
         </a>
         <a class="nav__link" href="https://github.com/Ultisaer">
-          <img class="nav__icon" src="/Portafolio/assets/Github-b8356241.svg" alt="Red social Github">
+          <img class="nav__icon" src="./assets/IconsNetwork/Github.svg" alt="Red social Github">
         </a>
       </div>
     </nav>
@@ -71,23 +69,23 @@
         <div class="projects__title fontSize--tl">PROYECTOS</div>
         <div class="projects__gallery">
           <button class="projects__move projects__move--back" aria-label="Volver">
-            <img src="/Portafolio/assets/arrowLeft-3b31057b.svg" alt="">                      
+            <img src="./assets/IconsNavigation/arrowLeft.svg" alt="">                      
           </button>
           <section class="projects__elements animationFadeIn">
           <!-- Creacion de los elementos del proyecto/carrucel con JS en componentes / proyectsElements  -->
           </section>
           <button class="projects__move projects__move--after" aria-label="Avanzar">
-            <img src="/Portafolio/assets/arrowRight-dca927ce.svg" alt="">
+            <img src="./assets/IconsNavigation/arrowRight.svg" alt="">
           </button>
         </div>
 
           <div class="focus hidden animationFadeIn">
             <div class="focus__elements focus__elements--back">
               <button class="focus__move focus__move--return" >
-                <img src="/Portafolio/assets/return-2beedfd7.svg" alt="">                               
+                <img src="./assets/IconsNavigation/return.svg" alt="">                               
               </button>
               <button class="focus__move focus__move--back" >
-                <img src="/Portafolio/assets/arrowLeft-3b31057b.svg" alt="">
+                <img src="./assets/IconsNavigation/arrowLeft.svg" alt="">
               </button>
             </div>
             <section class="detail" >
@@ -97,10 +95,10 @@
             </section>
             <div class="focus__elements focus__elements--next">
               <button class="focus__move focus__move--expand " >
-                <img src="/Portafolio/assets/expand-d295a9fc.svg" alt="projects expand" class="hidden">                          
+                <img src="./assets/IconsNavigation/expand.svg" alt="projects expand" class="hidden">                          
               </button>
               <button class="focus__move focus__move--next">
-                <img src="/Portafolio/assets/arrowRight-dca927ce.svg" alt="">
+                <img src="./assets/IconsNavigation/arrowRight.svg" alt="">
               </button>
             </div>
           </div>
@@ -122,13 +120,13 @@
           <section class="skills__section--container">
             
             <button class="skills__move skills__move--back" aria-label="Habilidad anterior">
-              <img src="/Portafolio/assets/arrowLeft-3b31057b.svg" alt="">
+              <img src="./assets/IconsNavigation/arrowLeft.svg" alt="">
             </button>
             <div class="skills__JS">
               <!-- Creacion de los elementos de las estadisticas con JS en componentes / stadistic / buildProjectEstadistic -->
             </div>
             <button class="skills__move skills__move--next" aria-label="Habilidad siguiente">
-              <img src="/Portafolio/assets/arrowRight-dca927ce.svg" alt="">
+              <img src="./assets/IconsNavigation/arrowRight.svg" alt="">
             </button>
             <div class="skills__button">
               <button class="skills__accion skills__accion--type  " data-target="type">TECNOLOGIAS</button>

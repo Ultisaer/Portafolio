@@ -1,0 +1,61 @@
+// Abstracts
+
+@import "./scss/abstracts/variables";
+@import "./scss/abstracts/mixins";
+
+// Base
+@import "./scss/base/reset";
+@import "./scss/base/typography";
+
+// Components (Componentes)
+@import "./scss/components/animation";
+@import "./scss/components/btn";
+@import "./scss/components/images";
+@import "./scss/components/links";
+@import "./scss/components/menu";
+@import "./scss/components/nav";
+@import "./scss/components/padding";
+@import "./scss/components/svg";
+
+// Layout (Diseño)
+@import "./scss/layaut/projects/gallery";
+
+@import "./scss/layaut/skills/buttons";
+@import "./scss/layaut/skills/carousel";
+@import "./scss/layaut/skills/contain";
+@import "./scss/layaut/skills/section";
+@import "./scss/layaut/skills/title";
+
+@import "./scss/layaut/statistics/project";
+@import "./scss/layaut/statistics/technology";
+@import "./scss/layaut/statistics/title";
+
+@import "./scss/layaut/aboutMe";
+@import "./scss/layaut/container";
+@import "./scss/layaut/header";
+@import "./scss/layaut/main";
+@import "./scss/layaut/navBar";
+
+// Pages (Paginas)
+@import "./scss/pages/skills/buttons";
+@import "./scss/pages/skills/data";
+@import "./scss/pages/skills/detail";
+@import "./scss/pages/skills/img";
+
+@import "./scss/pages/statistics/background";
+@import "./scss/pages/statistics/container";
+@import "./scss/pages/statistics/element";
+@import "./scss/pages/statistics/label";
+@import "./scss/pages/statistics/statistics";
+@import "./scss/pages/statistics/view";
+
+@import "./scss/pages/aboutMe";
+@import "./scss/pages/detail";
+@import "./scss/pages/focus";
+@import "./scss/pages/proyects";
+
+// Themes
+@import "./scss/themes/tema";
+
+// Vendors
+@import "./scss/vendors/estilos-asociados";

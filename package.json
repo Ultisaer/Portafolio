@@ -3,10 +3,20 @@
   "version": "1.0.0",
   "description": "Ultisaer portafolio",
   "author": "",
+  "private": true,
+  "keywords": [
+    "ultisaer",
+    "frontend",
+    "portafolio"
+  ],
+  "type": "module",
   "scripts": {
-    "sass": "sass --watch docs/scss/main.sass docs/scss/main.css"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "sass": "^1.64.2"
+    "sass": "^1.65.1",
+    "vite": "^4.4.5"
   }
 }
